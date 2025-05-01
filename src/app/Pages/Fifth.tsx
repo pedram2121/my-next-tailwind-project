@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Container from "../container/Container";
 import { useResponsive } from "../components/ResponsiveContext";
 import Image from "next/image";
 import b from "../../../public/images/best.jpg";
@@ -57,13 +56,13 @@ function Fifth() {
             <div key={index} className="relative w-full max-w-[300px] group">
               {/* تصویر پس‌زمینه */}
               <div className="absolute w-full z-0 bottom-[-30px] left-[80%] top-40 opacity-0 group-hover:opacity-80 transition-opacity duration-300">
-                <img
+                <Image
                   src="/images/dot.png"
                   alt="app shape"
+                  width={100}
+                  height={100}
                   className="object-contain"
                   style={{
-                    width: "100px",
-                    height: "100px",
                     filter: "grayscale(100%) brightness(0.8) contrast(1.2)",
                   }}
                 />
@@ -125,13 +124,13 @@ function Fifth() {
             <div key={index} className="relative w-full max-w-[280px] group">
               {/* تصویر پس‌زمینه */}
               <div className="absolute w-full z-0 bottom-[-25px] left-[65%] top-36 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <img
+                <Image
                   src="/images/dot.png"
                   alt="app shape"
+                  width={90}
+                  height={90}
                   className="object-contain"
                   style={{
-                    width: "90px",
-                    height: "90px",
                     filter: "grayscale(100%) brightness(0.8) contrast(1.2)",
                   }}
                 />
@@ -193,13 +192,13 @@ function Fifth() {
             <div key={index} className="relative w-full max-w-[260px] group">
               {/* تصویر پس‌زمینه */}
               <div className="absolute w-full z-0 bottom-[-20px] right-[-10px] top-32 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <img
+                <Image
                   src="/images/dot.png"
                   alt="app shape"
+                  width={60}
+                  height={60}
                   className="object-contain"
                   style={{
-                    width: "60px",
-                    height: "60px",
                     filter: "grayscale(100%) brightness(0.8) contrast(1.2)",
                   }}
                 />

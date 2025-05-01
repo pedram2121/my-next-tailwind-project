@@ -5,6 +5,7 @@ import available from "../../../public/images/available-app.png";
 import appshape from "../../../public/images/app-shape-right.png";
 import appbtn2 from "../../../public/images/app_btn2.png";
 import appbtn1 from "../../../public/images/app_btn1.png";
+import Image from "next/image";
 
 function Seventh() {
   const { isMobile, isTablet } = useResponsive();
@@ -57,20 +58,23 @@ function Seventh() {
       <div className="absolute top-10 left-10 w-40 h-40 bg-purple-400 rounded-full opacity-20 animate-[pulse_3s_ease-in-out_infinite]" />
 
       {/* Shape image with proper positioning */}
-      <div className="absolute bottom-0 left-0 w-[150px] h-[150px] opacity-50">
-        <img
+      <div className="absolute bottom-0 left-0 w-[150px] h-[150px] opacity-50 relative">
+        <Image
           src="/images/45.png"
           alt="Decorative shape"
-          className="object-contain w-full h-full"
+          fill
+          className="object-contain"
         />
       </div>
 
       {/* Main device image */}
       <div className={imgContainerStyles}>
-        <img
+        <Image
           src={available.src}
           alt="App personally crafted for you"
           className={`object-contain ${deviceStyles}`}
+          width={600}
+          height={600}
         />
       </div>
 
@@ -94,22 +98,26 @@ function Seventh() {
             rel="noopener noreferrer"
             aria-label="Download from Google Play"
           >
-            <img
+            <Image
               src={appbtn2.src}
               alt="Get it on Google Play"
               className={`${buttonSize} hover:opacity-80 transition-opacity`}
+              width={150}
+              height={50}
             />
           </a>
           <a
             href="https://www.apple.com/app-store/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Download from App Store"
+            aria-label="Download on the App Store"
           >
-            <img
+            <Image
               src={appbtn1.src}
               alt="Download on the App Store"
               className={`${buttonSize} hover:opacity-80 transition-opacity`}
+              width={150}
+              height={50}
             />
           </a>
         </div>

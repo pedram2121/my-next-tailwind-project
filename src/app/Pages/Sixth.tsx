@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import type { SwiperOptions } from "swiper/types";
+import Image from "next/image";
 
 type SixthProps = {
   className?: string;
@@ -115,9 +116,11 @@ const Sixth: React.FC<SixthProps> = ({
                     isMobile ? "mb-4" : "mb-6"
                   }`}
                 >
-                  <img
+                  <Image
                     src={card.image}
                     alt={card.name}
+                    width={50}
+                    height={50}
                     className={`${
                       isMobile
                         ? "w-8 h-8"
