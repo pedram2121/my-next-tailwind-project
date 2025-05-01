@@ -1,0 +1,3 @@
+[submodule "my-next-tailwind-project"]
+	path = my-next-tailwind-project
+	url = https://github.com/username/my-next-tailwind-project.git
