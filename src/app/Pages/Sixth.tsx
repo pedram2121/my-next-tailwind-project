@@ -9,17 +9,11 @@ import "swiper/css/navigation";
 import type { SwiperOptions } from "swiper/types";
 import Image from "next/image";
 
-type SixthProps = {
-  className?: string;
-  direction?: "ltr" | "rtl";
-  paginationEl?: string;
-};
+type SixthProps = { className?: string; direction?: "ltr" | "rtl"; paginationEl?: string;};
+  
 
-const Sixth: React.FC<SixthProps> = ({
-  className = "",
-  direction = "rtl",
-  paginationEl,
-}) => {
+const Sixth: React.FC<SixthProps> = ({ className = "", direction = "rtl", paginationEl, }) => {
+
   const { isMobile, isTablet, isDesktop } = useResponsive();
 
   const cards = [
@@ -29,20 +23,12 @@ const Sixth: React.FC<SixthProps> = ({
     { name: "سارا محمدی", image: "/images/comment_2.png" },
   ];
 
-  const cardClass = isMobile
-    ? "w-[260px] h-[340px]"
-    : isTablet
-    ? "w-[320px] h-[400px]"
-    : "w-[400px] h-[520px]";
-
+  const cardClass = isMobile ? "w-[280px] h-[400px]": isTablet ? "w-[320px] h-[400px]" : "w-[400px] h-[520px]";
+   
   const textSize = isMobile ? "text-2xl" : isTablet ? "text-3xl" : "text-4xl";
-  const nameSize = isMobile ? "text-xs" : isTablet ? "text-sm" : "text-base";
-  const descriptionSize = isMobile
-    ? "text-[10px] leading-4"
-    : isTablet
-    ? "text-sm leading-5"
-    : "text-base leading-6";
-
+  const nameSize = isMobile ? "text-[14px]" : isTablet ? "text-sm" : "text-base";
+  const descriptionSize = isMobile ? "text-[12px] leading-7" : isTablet ? "text-sm leading-5" : "text-base leading-6";
+   
   const spaceBetween = isMobile ? 10 : isTablet ? 20 : 30;
 
   const breakpoints: SwiperOptions["breakpoints"] = {
@@ -62,25 +48,16 @@ const Sixth: React.FC<SixthProps> = ({
   };
 
   return (
-    <div
-      className={`flex flex-col items-center justify-center ${
-        isMobile ? "min-h-[650px] py-8" : "min-h-[950px] py-12"
-      } px-4 bg-[#F4FEFF] overflow-x-hidden`}
-    >
-      <h1
-        className={`${textSize} font-bold text-black ${
-          isMobile ? "mb-8 mt-6" : "mb-16 mt-12"
-        } font-[IRANSans]`}
-      >
+
+    <div className={`flex flex-col items-center justify-center ${isMobile ? "h-[550px] py-8" : "min-h-[950px] py-12" } px-4 bg-[#F4FEFF] overflow-x-hidden`}>
+
+      <h1 className={`${textSize} font-bold text-black ${isMobile ? "mb-14" : "mb-16 mt-12"} font-[IRANSans]`}>
         اپ ساز در نظر مشتریان
       </h1>
 
-      <div
-        className={`w-full max-w-7xl mx-auto relative ${
-          isMobile ? "flex justify-center" : ""
-        }`}
-      >
-        <div className={`${isMobile ? "max-w-[280px] w-full" : "w-full"}`}>
+      <div className={`w-full max-w-7xl mx-auto relative ${isMobile ? "flex justify-center w-full" : "" }`} >
+          
+        <div className={`${isMobile ? "w-full h-auto" : "w-full"}`}>
           <Swiper
             dir={direction}
             modules={[Autoplay, Pagination, Navigation]}
@@ -90,61 +67,48 @@ const Sixth: React.FC<SixthProps> = ({
             observer={true}
             observeParents={true}
             centeredSlides={true}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
+            autoplay={{  delay: 2000, disableOnInteraction: false, }}
+
             pagination={{
               clickable: true,
               bulletClass: `custom-swiper-bullet`,
               bulletActiveClass: `custom-swiper-bullet-active`,
-              el: paginationEl || undefined,
-            }}
-            navigation={false}
-            breakpoints={breakpoints}
-            className={`pb-24 ${className}`}
-          >
+              el: paginationEl || undefined,}}
+              navigation={false} breakpoints={breakpoints} className={`pb-24 ${className}`} >
+           
+           
+        
             {cards.map((card, index) => (
               <SwiperSlide
                 key={index}
-                className={`swiper-slide-custom ${cardClass} bg-white ${
-                  isMobile ? "p-4" : "p-6"
-                } rounded-lg shadow-md flex flex-col justify-between transition-all duration-300 cursor-pointer`}
-              >
-                <div
-                  className={`flex flex-row-reverse items-center ${
-                    isMobile ? "mb-4" : "mb-6"
-                  }`}
-                >
+                className={`swiper-slide-custom ${cardClass} bg-white ${isMobile ? "p-5" : "p-6"  } rounded-lg
+                 shadow-md flex flex-col justify-between transition-all duration-300 cursor-pointer`}>
+
+
+                <div className={`flex flex-row-reverse items-center ${isMobile ? "mb-4 h-32" : "mb-6"}`}>
                   <Image
                     src={card.image}
                     alt={card.name}
-                    width={50}
-                    height={50}
-                    className={`${
-                      isMobile
-                        ? "w-8 h-8"
-                        : isTablet
-                        ? "w-10 h-10"
-                        : "w-14 h-14"
-                    } rounded-full`}
-                  />
-                  <h2
-                    className={`${nameSize} mr-2 font-semibold text-purple-800 font-[IRANSans]`}
-                  >
+                    width={60}
+                    height={60}
+                    className={`${ isMobile ? "w-14 h-14 mr-3" : isTablet ? "w-10 h-10" : "w-14 h-14"} rounded-full`} />
+
+
+                  <h2 className={`${nameSize} mr-4 font-semibold text-purple-800 font-[IRANSans]`}>
                     {card.name}
                   </h2>
                 </div>
-                <p
-                  className={`${descriptionSize} text-gray-600 text-right font-[IRANSans] line-clamp-8`}
-                >
+
+                <p className={`${descriptionSize} text-gray-700 text-right font-[IRANSans] line-clamp-8`} >
                   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                   استفاده از طراحان گرافیک است لورم ایپسوم متن ساختگی با تولید
                   سادگی نامفهوم از صنعت چاپ و با kiefer است.
                 </p>
               </SwiperSlide>
             ))}
+
           </Swiper>
+
         </div>
       </div>
     </div>

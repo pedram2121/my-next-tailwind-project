@@ -2,13 +2,13 @@
 
 @font-face {
   font-family: 'IRANSans';
-  src: url('/src/fonts/IRANSans.ttf') format('truetype');
+  src: url('/fonts/IRANSans.ttf') format('truetype');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'IRANSans_Bold';
-  src: url('/src/fonts/IRANSans_Bold.ttf') format('truetype');
+  src: url('/fonts/IRANSans_Bold.ttf') format('truetype');
   font-weight: normal;
 }
 
@@ -16,6 +16,7 @@
   --font-iransans: 'IRANSans', sans-serif;
   --font-iransans-bold: 'IRANSans_Bold', sans-serif;
 }
+
 
 @layer utilities {
   .carousel-container {
@@ -83,4 +84,9 @@
   background: #ea580c;
   opacity: 1;
   transform: scale(1.2);
+}
+
+
+.ltr {
+  direction: ltr;
 }
