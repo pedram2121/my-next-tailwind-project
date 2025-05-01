@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'IRANSans';
+  src: url('/src/fonts/IRANSans.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'IRANSans_Bold';
+  src: url('/src/fonts/IRANSans_Bold.ttf') format('truetype');
+  font-weight: normal;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-iransans: 'IRANSans', sans-serif;
+  --font-iransans-bold: 'IRANSans_Bold', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer utilities {
+  .carousel-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .carousel-items {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-item {
+    flex-shrink: 0;
+    width: 100%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+.swiper-slide-custom {
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-slide-active {
+  opacity: 1 !important;
+}
+
+/* فاصله دادن bulletها از کارت‌ها و تنظیم flex */
+.swiper-pagination {
+  position: relative !important;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px; /* فاصله مناسب از کارت */
+  margin-bottom: 10px;
+}
+
+/* ظاهر دکمه‌های bullet */
+.custom-swiper-bullet {
+  width: 8px;
+  height: 8px;
+  background: #f97316;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  border-radius: 9999px;
+  margin: 0 5px;
+}
+
+.custom-swiper-bullet-active {
+  background: #ea580c;
+  opacity: 1;
+  transform: scale(1.2);
 }
