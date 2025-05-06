@@ -12,19 +12,19 @@ function Third() {
     {
       title: "ارسال نوتیفیکیشن",
       description:
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+        "در آوامین، ما تلاش کردیم تا با استفاده از تکنولوژی‌های نوین و هوش مصنوعی، تمامی فرایندها را به صورت خودکار انجام دهیم. این سیستم به گونه‌ای طراحی شده است که تمامی موارد به صورت دقیق و بدون خطا در سیستم حسابداری شما سند بخورد",
       img: "/images/secure-payment.png",
     },
     {
       title: "پرداخت آنلاین",
       description:
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+        "در آوامین، ما تلاش کردیم تا با استفاده از تکنولوژی‌های نوین و هوش مصنوعی، تمامی فرایندها را به صورت خودکار انجام دهیم. این سیستم به گونه‌ای طراحی شده است که تمامی موارد به صورت دقیق و بدون خطا در سیستم حسابداری شما سند بخورد",
       img: "/images/paper-plane.png",
     },
     {
       title: "مدیریت آسان",
       description:
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+        "در آوامین، ما تلاش کردیم تا با استفاده از تکنولوژی‌های نوین و هوش مصنوعی، تمامی فرایندها را به صورت خودکار انجام دهیم. این سیستم به گونه‌ای طراحی شده است که تمامی موارد به صورت دقیق و بدون خطا در سیستم حسابداری شما سند بخورد",
       img: "/images/analyst.png",
     },
   ];
@@ -47,9 +47,9 @@ function Third() {
     const titleClass = isMobile ? "text-[18px] mt-8" : "text-base sm:text-[22px] mt-6 sm:mt-14 mb-2";
      
   
-    const descriptionClass = isMobile ? "text-[14px] mt-8 ltr" : "text-xs sm:text-[17px] mt-6 sm:mt-12";
+    const descriptionClass = isMobile ? "text-[14px] mt-8 line-clamp-3" : "text-xs sm:text-[17px] mt-6 sm:mt-12 text-justify-last-right";
 
-    const iconSize = isMobile ? "w-12 h-12" : "w-14 h-12";
+    const iconSize = isMobile ? "w-48 h-48" : "w-80  h-80";
 
     const pointSize = isMobile ? "w-16 h-24 mb-28" : "w-20 h-20";
 
@@ -71,16 +71,16 @@ function Third() {
          
 
           {/* دایره رنگی با آیکون identity */}
-          <div className={`relative flex items-center justify-center rounded-full
-            bg-gradient-to-t from-pink-300 to-purple-500 group-hover:from-blue-300
+          <div className={` border border-gray-500 relative flex items-center justify-center rounded-full
+            bg-gradient-to-t from-pink-200 to-blue-300 group-hover:from-blue-300
              group-hover:to-blue-500 transition-colors duration-300 ${circleSize}`}
             style={{ zIndex: 1 }} >
          
-            <Image src={ title === "ارسال نوتیفیکیشن" ? "/images/secure-payment.png" : title === "پرداخت آنلاین" ? "/images/paper-plane.png" : "/images/analyst.png" }
+            <Image src={ title === "ارسال نوتیفیکیشن" ? "/images/paper-plane.png" : title === "پرداخت آنلاین" ? "/images/secure-payment.png" : "/images/analyst.png" }
                   alt="identity icon"
                   className={`object-contain ${iconSize}`}
-                  width={50}
-                  height={50} />  
+                  width={90}
+                  height={90} />  
           </div>
         </div>
 
@@ -97,16 +97,16 @@ function Third() {
 
   // رندر دسکتاپ
   const renderDesktop = () => (
-    <div className="flex flex-col mx-auto text-center justify-center items-center">
+    <div className="flex flex-col mx-auto text-center justify-center items-center py-20">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold font-[IRANSans] mb-4">
-          اپ ساز به شما کمک خواهد کرد
+          آوامین به شما کمک خواهد کرد
         </h2>
       </div>
       <div className="grid grid-cols-3 gap-10 h-[400px] w-[1100px]">
         {features.map((feature, index) => (
           <div className="hover:scale-105 transition group" key={index}>
-            <FeatureCard {...feature} />
+            <FeatureCard {...feature} key={feature.img} />
           </div>
         ))}
       </div>
@@ -133,13 +133,13 @@ function Third() {
 
   // رندر موبایل
   const renderMobile = () => (
-    <div className="text-center h-auto">
+    <div className="text-center h-auto w-full">
       <div className="mb-4">
         <h2 className="text-lg font-bold font-[IRANSans] mb-2">
           اپ ساز به شما کمک خواهد کرد
         </h2>
       </div>
-      <div className="w-full max-w-[90%] mx-auto flex flex-col items-center">
+      <div className="w-full mx-auto flex flex-col items-center py-10">
         {features.map((feature, index) => (
           <div className="mb-4 group w-full" key={index}>
             <FeatureCard {...feature} isMobile />

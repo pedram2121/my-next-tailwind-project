@@ -90,3 +90,8 @@
 .ltr {
   direction: ltr;
 }
+
+.text-justify-last-right {
+  text-align: justify;
+  text-align-last: right;
+}

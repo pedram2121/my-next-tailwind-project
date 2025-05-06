@@ -2,63 +2,40 @@
 import React from "react";
 import { useResponsive } from "../components/ResponsiveContext";
 import available from "../../../public/images/available-app.png";
-import appshape from "../../../public/images/app-shape-right.png";
 import appbtn2 from "../../../public/images/app_btn2.png";
 import appbtn1 from "../../../public/images/app_btn1.png";
 import Image from "next/image";
 
-function Seventh() {
-  const { isMobile, isTablet } = useResponsive();
+// CSS for the pulsing animation
+const pulseAnimation = `
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+`;
 
-  const deviceStyles = isMobile
-    ? "w-3/4"
-    : isTablet
-    ? "w-full max-w-[450px]"
-    : "w-full max-w-[600px]";
-  const textSize = isMobile ? "text-2xl" : isTablet ? "text-3xl" : "text-4xl";
-  const paragraphSize = isMobile
-    ? "text-sm"
-    : isTablet
-    ? "text-base"
-    : "text-lg";
-  const buttonSize = isMobile ? "h-10" : "h-12";
-
-  const containerStyles = `flex ${
-    isMobile ? "flex-col" : "flex-row"
-  } items-center justify-center min-h-[600px] bg-gradient-to-r 
-    from-purple-800 to-pink-500 text-white px-4 py-12 relative overflow-hidden`;
-
-  const imgContainerStyles = `flex justify-center ${
-    isMobile ? "w-full mb-8" : isTablet ? "w-1/2 pr-4" : "w-1/2 pr-8"
-  }`;
-
-  const textContainerStyles = `flex flex-col items-center space-y-6 ${
-    isMobile ? "w-full text-center" : "w-1/2 text-right pr-8"
-  }`;
-
-  const buttonContainerStyles = `flex ${
-    isMobile ? "justify-center space-x-3" : "justify-end space-x-4"
-  } mt-4`;
-
-  // CSS for the pulsing animation
-  const pulseAnimation = `
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-  `;
+// Desktop View Component
+const DesktopView: React.FC = () => {
+  
+  const containerStyles =
+    "flex flex-row items-center justify-center min-h-[600px] bg-gradient-to-r from-purple-800 to-pink-500 text-white px-4 py-12 relative overflow-hidden";
+  const imgContainerStyles = "flex justify-center w-[430px] pr-8";
+  const textContainerStyles =
+    "flex flex-col items-center space-y-6 w-1/2 text-right pr-8";
+  const buttonContainerStyles = "flex justify-end space-x-4 mt-4";
+  const deviceStyles = "w-full max-w-[600px]";
+  const textSize = "text-4xl";
+  const paragraphSize = "text-lg";
+  const buttonSize = "h-12";
 
   return (
     <div className={containerStyles}>
-      {/* Inject CSS animation */}
       <style>{pulseAnimation}</style>
-
-      {/* Background decorative circle with pulse animation */}
-      <div className="absolute top-10 left-10 w-40 h-40 bg-purple-400 rounded-full opacity-20 animate-[pulse_3s_ease-in-out_infinite]" />
-
-      {/* Shape image with proper positioning */}
-      <div className="absolute bottom-0 left-0 w-[150px] h-[150px] opacity-50 relative">
+      <div className="relative">
+        <div className="absolute -top-72 -left-60 w-40 h-40 bg-purple-300 rounded-full opacity-20 animate-[pulse_3s_ease-in-out_infinite]" />
+      </div>
+      <div className="absolute bottom-0 left-0 w-[150px] h-[150px] opacity-50">
         <Image
           src="/images/45.png"
           alt="Decorative shape"
@@ -66,19 +43,15 @@ function Seventh() {
           className="object-contain"
         />
       </div>
-
-      {/* Main device image */}
-      <div className={imgContainerStyles}>
+      <div className={`${imgContainerStyles} relative w-[420px]`}>
         <Image
           src={available.src}
           alt="App personally crafted for you"
-          className={`object-contain ${deviceStyles}`}
-          width={600}
-          height={600}
+          className={`object-contain absolute -top-[180px] right-32 ${deviceStyles}`}
+          width={300}
+          height={300}
         />
       </div>
-
-      {/* Text content */}
       <div className={textContainerStyles}>
         <h1 className={`font-bold font-[IRANSans] leading-tight ${textSize}`}>
           هم اکنون اپ ساز برای تمام
@@ -89,8 +62,6 @@ function Seventh() {
           سهم اینترنت گردی با موبایل 80% است؛ بنابراین سایت شما نیاز به یک
           اپلیکیشن حرفه ای دارد.
         </p>
-
-        {/* App store buttons */}
         <div className={buttonContainerStyles}>
           <a
             href="https://play.google.com"
@@ -124,6 +95,186 @@ function Seventh() {
       </div>
     </div>
   );
-}
+};
+
+// Tablet View Component
+const TabletView: React.FC = () => {
+  const containerStyles =
+    "flex flex-row items-center justify-center min-h-[600px] bg-gradient-to-r from-purple-800 to-pink-500 text-white px-4 py-12 relative overflow-hidden";
+  const imgContainerStyles = "flex justify-center w-1/2 pr-4";
+  const textContainerStyles =
+    "flex flex-col items-center space-y-6 w-1/2 text-right pr-8";
+  const buttonContainerStyles = "flex justify-end space-x-4 mt-4";
+  const deviceStyles = "w-full max-w-[450px]";
+  const textSize = "text-3xl";
+  const paragraphSize = "text-base";
+  const buttonSize = "h-12";
+
+  return (
+    <div className={containerStyles}>
+      <style>{pulseAnimation}</style>
+      <div className="relative">
+        <div className="absolute -top-72 -left-60 w-40 h-40 bg-purple-300 rounded-full opacity-20 animate-[pulse_3s_ease-in-out_infinite]" />
+      </div>
+      <div className="absolute bottom-0 left-0 w-[150px] h-[150px] opacity-50">
+        <Image
+          src="/images/45.png"
+          alt="Decorative shape"
+          fill
+          className="object-contain"
+        />
+      </div>
+      <div className={`${imgContainerStyles} relative w-[420px]`}>
+        <Image
+          src={available.src}
+          alt="App personally crafted for you"
+          className={`object-contain absolute -top-[180px] right-32 ${deviceStyles}`}
+          width={300}
+          height={300}
+        />
+      </div>
+      <div className={textContainerStyles}>
+        <h1 className={`font-bold font-[IRANSans] leading-tight ${textSize}`}>
+          هم اکنون اپ ساز برای تمام
+          <br />
+          دستگاه ها قابل دانلود است
+        </h1>
+        <p className={`leading-relaxed max-w-md ${paragraphSize}`}>
+          سهم اینترنت گردی با موبایل 80% است؛ بنابراین سایت شما نیاز به یک
+          اپلیکیشن حرفه ای دارد.
+        </p>
+        <div className={buttonContainerStyles}>
+          <a
+            href="https://play.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download from Google Play"
+          >
+            <Image
+              src={appbtn2.src}
+              alt="Get it on Google Play"
+              className={`${buttonSize} hover:opacity-80 transition-opacity`}
+              width={150}
+              height={50}
+            />
+          </a>
+          <a
+            href="https://www.apple.com/app-store/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download on the App Store"
+          >
+            <Image
+              src={appbtn1.src}
+              alt="Download on the App Store"
+              className={`${buttonSize} hover:opacity-80 transition-opacity`}
+              width={150}
+              height={50}
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Mobile View Component
+const MobileView: React.FC = () => {
+  const containerStyles =
+    "flex flex-col items-center justify-center min-h-[600px] bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-10 relative overflow-hidden";
+  const imgContainerStyles = "flex justify-center w-full";
+  const textContainerStyles =
+    "flex flex-col items-center space-y-6 w-full text-center";
+  const buttonContainerStyles = "flex justify-center space-x-3 mt-4";
+  const deviceStyles = "w-2/4 top-[150px] left-24";
+  const textSize = "text-2xl";
+  const paragraphSize = "text-sm";
+  const buttonSize = "h-14";
+
+  return (
+    <div className={containerStyles}>
+      <style>{pulseAnimation}</style>
+      <div className="relative">
+        <div className="absolute -top-80 -left-60 w-40 h-40 bg-purple-300 rounded-full
+         opacity-20 animate-[pulse_3s_ease-in-out_infinite]" />
+      </div>
+      <div className="absolute -bottom-1 left-2 w-[100px] h-[100px] opacity-50">
+        <Image
+          src="/images/45.png"
+          alt="Decorative shape"
+          fill
+          className="object-contain"
+        />
+      </div>
+      <div className={`${imgContainerStyles} relative w-full top-[15px]`}>
+        <Image
+          src={available.src}
+          alt="App personally crafted for you"
+          className={`object-contain absolute ${deviceStyles}`}
+          width={300}
+          height={300}
+        />
+      </div>
+      <div className={`textContainerStyles relative`}>
+
+        <div className="absolute -top-40 left-56 px-6 w-full">
+         <h1 className={` font-bold font-[IRANSans] leading-tight ${textSize}`}>
+          آوامین
+        </h1>
+        </div>
+       
+        <p className={` absolute -top-24 left-0 leading-relaxed max-w-md
+           text-justify-last-right font-[IRANSans] w-full  ${paragraphSize}`}>
+        در آوامین، ما تلاش کردیم تا با استفاده از تکنولوژی‌های نوین و هوش مصنوعی، تمامی فرایندها را به صورت خودکار انجام دهیم. این سیستم به گونه‌ای طراحی شده است که تمامی موارد به صورت دقیق و بدون خطا در سیستم حسابداری شما سند بخورد
+        </p>
+
+        
+        <div className={buttonContainerStyles}>
+          <a
+            href="https://play.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download from Google Play"
+          >
+            <Image
+              src={appbtn2.src}
+              alt="Get it on Google Play"
+              className={`${buttonSize} hover:opacity-80 transition-opacity mt-10`}
+              width={150}
+              height={50}
+            />
+          </a>
+          <a
+            href="https://www.apple.com/app-store/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download on the App Store"
+          >
+            <Image
+              src={appbtn1.src}
+              alt="Download on the App Store"
+              className={`${buttonSize} hover:opacity-80 transition-opacity mt-10`}
+              width={150}
+              height={50}
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Main Component
+const Seventh: React.FC = () => {
+  const { isMobile, isTablet } = useResponsive();
+
+  if (isMobile) {
+    return <MobileView />;
+  } else if (isTablet) {
+    return <TabletView />;
+  } else {
+    return <DesktopView />;
+  }
+};
 
 export default Seventh;

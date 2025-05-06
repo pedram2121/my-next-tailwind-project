@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Container from "../container/Container";
 import { useResponsive } from "../components/ResponsiveContext";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -15,9 +14,12 @@ function Fourth() {
 
   // لیست تصاویر
   const screenshots = [
-    "/images/App1.png",
-    "/images/App2.png",
-    "/images/App3.png",
+    "/images/1.jpg",
+    "/images/2.jpg",
+    "/images/3.jpg",
+    "/images/4.jpg",
+    "/images/5.jpg",
+    "/images/6.jpg",
   ];
 
   // اندازه‌های مختلف برای دستگاه‌ها
@@ -32,46 +34,53 @@ function Fourth() {
   const layout = isDesktop ? "flex-row gap-16" : "flex-col gap-4";
 
   return (
-
     <div className="bg-white sm:py-12 sm:mt-32 mt-12 ">
 
-      <div className={`flex w-full items-center ${layout} ${ isDesktop ? "px-8" : "" }`} >
-       
+      <div className={`flex w-full items-center ${layout} ${isDesktop ? "px-8" : "" }`} >
+
         {/* بخش متنی */}
-        <div className={isDesktop ? "w-1/3 text-right" : "w-full mb-6 px-4 text-right text-justify"} >
-        
-       
+        <div className={isDesktop ? "w-1/3 text-right": "w-full mb-6 px-4 text-justify-last-right"}>
+
           <h2 className={`font-bold font-[IRANSans] mb-6 text-black ${titleSize}`} >
             اسکرین شات محیط برنامه
           </h2>
 
-          <p className={`text-gray-600 font-[IRANSans] leading-relaxed ${textSize}`} >
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
-            ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
+          <p className={`text-gray-600 font-[IRANSans] leading-relaxed text-justify-last-right text-[15px] ${textSize}`} >
+            در دنیای پرجنب‌وجوش طلا و جواهر، اپلیکیشن‌های زیادی وجود دارند که هر
+            کدام سعی در ارائه خدمات خاص خود دارند. اما ما در آوامین احساس کردیم
+            که نیاز به یک پلتفرم مطمئن و امن برای فعالان این صنف حس می‌شود. به
+            همین دلیل، اپلیکیشنی طراحی کردیم که نه تنها به شما امکان مدیریت و
+            فروش محصولاتتان را می‌دهد، بلکه با تمرکز بر امنیت اطلاعات شما،
+            اطمینان خاطر را فراهم می‌آورد. آوامین با بهره‌گیری از تکنولوژی‌های
+            پیشرفته، محیطی امن و قابل اعتماد را برای شما فراهم کرده است تا با
+            خیال راحت به تجارت خود بپردازید.
           </p>
-
         </div>
-
 
         {/* اسلایدر تصاویر */}
         <div className={isDesktop ? "w-2/3" : "w-full"}>
           <Swiper
-            modules={[Navigation]} spaceBetween={spaceBetween}
-            slidesPerView={slidesPerView} navigation  className="mySwiper" >
-
+            modules={[Navigation]}
+            spaceBetween={spaceBetween}
+            slidesPerView={slidesPerView}
+            navigation
+            className="mySwiper"
+          >
             {screenshots.map((src, index) => (
               <SwiperSlide key={index}>
                 <div className="flex justify-center">
-                  <Image src={src} alt={`اسکرین‌شات ${index + 1}`} width={imageWidth} height={imageHeight}
-                    className="object-contain rounded-lg shadow-md"/>             
+                  <Image
+                    src={src}
+                    alt={`اسکرین‌شات ${index + 1}`}
+                    width={imageWidth}
+                    height={imageHeight}
+                    className="object-contain rounded-lg shadow-md"
+                  />
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-
       </div>
     </div>
   );

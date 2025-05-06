@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Container from "../container/Container";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../../../public/images/logo.png";
+import logo from "../../../public/images/80.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,14 +41,14 @@ function Navbar() {
           {/* لوگو سمت راست */}
           <div className="flex items-center gap-6">
             <Link href="/">
-              <Image className="w-24" alt="logo" src={logo} />
+              <Image className="w-32" alt="logo" src={logo} />
             </Link>
           </div>
 
           {/* منوی دسکتاپ سمت چپ */}
           <div className="hidden lg:flex gap-14 text-black">
             <Link
-              href="/contactUs"
+              href="/contact"
               className="font-iransans relative group pb-1"
             >
               تماس با ما
@@ -110,7 +110,7 @@ function Navbar() {
         <div className="lg:hidden absolute top-20 left-1/4 right-1/4 bg-[#F4FEFF] p-6">
           <div className="flex flex-col items-center gap-6">
             <Link
-              href="/contactUs"
+              href="/contact"
               onClick={() => setIsOpen(false)}
               className="text-black"
             >

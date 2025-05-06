@@ -3,7 +3,7 @@ import React from "react";
 import Container from "../container/Container";
 import Image from "next/image";
 import point from "../../../public/images/dot.png";
-import identity from "../../../public/images/identity.png";
+import identity from "../../../public/images/comment_3.png";
 import { useResponsive } from "../components/ResponsiveContext";
 
 function Solutions() {

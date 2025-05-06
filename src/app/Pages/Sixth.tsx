@@ -52,7 +52,7 @@ const Sixth: React.FC<SixthProps> = ({ className = "", direction = "rtl", pagina
     <div className={`flex flex-col items-center justify-center ${isMobile ? "h-[550px] py-8" : "min-h-[950px] py-12" } px-4 bg-[#F4FEFF] overflow-x-hidden`}>
 
       <h1 className={`${textSize} font-bold text-black ${isMobile ? "mb-14" : "mb-16 mt-12"} font-[IRANSans]`}>
-        اپ ساز در نظر مشتریان
+        آوامین در نظر مشتریان
       </h1>
 
       <div className={`w-full max-w-7xl mx-auto relative ${isMobile ? "flex justify-center w-full" : "" }`} >
@@ -99,7 +99,7 @@ const Sixth: React.FC<SixthProps> = ({ className = "", direction = "rtl", pagina
                   </h2>
                 </div>
 
-                <p className={`${descriptionSize} text-gray-700 text-right font-[IRANSans] line-clamp-8`} >
+                <p className={`${descriptionSize} text-gray-700 text-right font-[IRANSans] line-clamp-8 text-justify-last-right`} >
                   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                   استفاده از طراحان گرافیک است لورم ایپسوم متن ساختگی با تولید
                   سادگی نامفهوم از صنعت چاپ و با kiefer است.
