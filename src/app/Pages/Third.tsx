@@ -10,21 +10,21 @@ function Third() {
 
   const features = [
     {
-      title: "ارسال نوتیفیکیشن",
+      title: "اطلاع‌رسانی آنی قیمت طلا",
       description:
-        "در آوامین، ما تلاش کردیم تا با استفاده از تکنولوژی‌های نوین و هوش مصنوعی، تمامی فرایندها را به صورت خودکار انجام دهیم. این سیستم به گونه‌ای طراحی شده است که تمامی موارد به صورت دقیق و بدون خطا در سیستم حسابداری شما سند بخورد",
-      img: "/images/secure-payment.png",
-    },
-    {
-      title: "پرداخت آنلاین",
-      description:
-        "در آوامین، ما تلاش کردیم تا با استفاده از تکنولوژی‌های نوین و هوش مصنوعی، تمامی فرایندها را به صورت خودکار انجام دهیم. این سیستم به گونه‌ای طراحی شده است که تمامی موارد به صورت دقیق و بدون خطا در سیستم حسابداری شما سند بخورد",
+        "با آوامین، همیشه از آخرین تغییرات قیمت طلا باخبر باشید. نوتیفیکیشن‌های هوشمند ما به‌صورت لحظه‌ای شما را از نوسانات بازار مطلع می‌کنند تا بهترین تصمیم را بگیرید",
       img: "/images/paper-plane.png",
     },
     {
-      title: "مدیریت آسان",
+      title: "پرداخت امن و سریع",
       description:
-        "در آوامین، ما تلاش کردیم تا با استفاده از تکنولوژی‌های نوین و هوش مصنوعی، تمامی فرایندها را به صورت خودکار انجام دهیم. این سیستم به گونه‌ای طراحی شده است که تمامی موارد به صورت دقیق و بدون خطا در سیستم حسابداری شما سند بخورد",
+        "خرید و فروش طلا در آوامین با درگاه‌های امن و فرآیند پرداخت سریع انجام می‌شود. تراکنش‌های شما با بالاترین استانداردهای امنیتی محافظت می‌شوند",
+      img: "/images/secure-payment.png",
+    },
+    {
+      title: "مدیریت ساده سرمایه‌گذاری",
+      description:
+        "با ابزارهای هوشمند آوامین، سبد سرمایه‌گذاری طلای خود را به‌راحتی مدیریت کنید. گزارش‌های دقیق و رابط کاربری ساده، کنترل کامل را به شما می‌دهد",
       img: "/images/analyst.png",
     },
   ];
@@ -36,61 +36,81 @@ function Third() {
     isTablet?: boolean;
   };
 
-  const FeatureCard = ({ title, description, isMobile , isTablet,}: FeatureCardProps) => {
-   
-    const cardClass = isMobile ? "p-4 h-[330px]" : isTablet ? "p-4 h-[350px]" : "p-4 sm:p-6 h-[550px] border border-gray-200";
-      
-    const pointPosition = isMobile ? "top-0 left-12" : "-top-8 left-24 h-32 w-20";
-     
+  const FeatureCard = ({
+    title,
+    description,
+    isMobile,
+    isTablet,
+  }: FeatureCardProps) => {
+    const cardClass = isMobile
+      ? "p-4 h-[330px]"
+      : isTablet
+      ? "p-4 h-[350px]"
+      : "p-4 sm:p-6 h-[550px] border border-gray-200";
+
+    const pointPosition = isMobile
+      ? "top-0 left-12"
+      : "-top-8 left-24 h-32 w-20";
+
     const circleSize = isMobile ? "w-24 h-24 mt-7" : "w-28 h-28 mt-8 sm:mt-12";
 
-    const titleClass = isMobile ? "text-[18px] mt-8" : "text-base sm:text-[22px] mt-6 sm:mt-14 mb-2";
-     
-  
-    const descriptionClass = isMobile ? "text-[14px] mt-8 line-clamp-3" : "text-xs sm:text-[17px] mt-6 sm:mt-12 text-justify-last-right";
+    const titleClass = isMobile
+      ? "text-[18px] mt-8"
+      : "text-base sm:text-[22px] mt-6 sm:mt-14 mb-2";
 
-    const iconSize = isMobile ? "w-48 h-48" : "w-80  h-80";
+    const descriptionClass = isMobile
+      ? "text-[12px] text-gray-600 mt-6 line-clamp-4 text-justify-last-right"
+      : "text-xs sm:text-[16px] text-gray-600 mt-6 sm:mt-12 text-justify-last-right";
+
+    const iconSize = isMobile ? "w-48 h-48" : "w-80 h-80";
 
     const pointSize = isMobile ? "w-16 h-24 mb-28" : "w-20 h-20";
 
     return (
-
-      <div className={`flex flex-col items-center text-center bg-white rounded-lg shadow-sm
-           transition-transform duration-300 ease-in-out w-full ${cardClass}`}>
-     
-        <div className={`relative flex items-center justify-center ${circleSize}`} >
-
+      <div
+        className={`flex flex-col items-center text-center bg-white rounded-lg shadow-sm transition-transform duration-300 ease-in-out w-full ${cardClass}`}
+      >
+        <div
+          className={`relative flex items-center justify-center ${circleSize}`}
+        >
           {/* تصویر point به‌عنوان لایه زیرین */}
-        <Image 
-          className={`absolute group-hover:translate-x-2 group-hover:transition-transform group-hover:duration-1000 ${pointSize} ${pointPosition}`}
-          src={point}
-          alt="point"
-          style={{ zIndex: 0 }}
-          width={50}
-          height={50}/>
-         
+          <Image
+            className={`absolute group-hover:translate-x-2 group-hover:transition-transform group-hover:duration-1000 ${pointSize} ${pointPosition}`}
+            src={point}
+            alt="point"
+            style={{ zIndex: 0 }}
+            width={50}
+            height={50}
+          />
 
           {/* دایره رنگی با آیکون identity */}
-          <div className={` border border-gray-500 relative flex items-center justify-center rounded-full
-            bg-gradient-to-t from-pink-200 to-blue-300 group-hover:from-blue-300
-             group-hover:to-blue-500 transition-colors duration-300 ${circleSize}`}
-            style={{ zIndex: 1 }} >
-         
-            <Image src={ title === "ارسال نوتیفیکیشن" ? "/images/paper-plane.png" : title === "پرداخت آنلاین" ? "/images/secure-payment.png" : "/images/analyst.png" }
-                  alt="identity icon"
-                  className={`object-contain ${iconSize}`}
-                  width={90}
-                  height={90} />  
+          <div
+            className={`border border-gray-500 relative flex items-center justify-center rounded-full bg-gradient-to-t from-pink-200 to-blue-300 group-hover:from-blue-300 group-hover:to-blue-500 transition-colors duration-300 ${circleSize}`}
+            style={{ zIndex: 1 }}
+          >
+            <Image
+              src={
+                title === "اطلاع‌رسانی آنی قیمت طلا"
+                  ? "/images/paper-plane.png"
+                  : title === "پرداخت امن و سریع"
+                  ? "/images/secure-payment.png"
+                  : "/images/analyst.png"
+              }
+              alt="identity icon"
+              className={`object-contain ${iconSize}`}
+              width={90}
+              height={90}
+            />
           </div>
         </div>
 
-
         <h3 className={`font-bold font-[IRANSans] ${titleClass}`}>{title}</h3>
 
-        <p className={`max-w-xs text-gray-400 font-[IRANSans] ${descriptionClass}`} >
+        <p
+          className={`max-w-xs text-gray-400 font-[IRANSans] ${descriptionClass}`}
+        >
           {description}
         </p>
-
       </div>
     );
   };
@@ -100,7 +120,7 @@ function Third() {
     <div className="flex flex-col mx-auto text-center justify-center items-center py-20">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold font-[IRANSans] mb-4">
-          آوامین به شما کمک خواهد کرد
+          با آوامین، طلای خود را هوشمندانه مدیریت کنید
         </h2>
       </div>
       <div className="grid grid-cols-3 gap-10 h-[400px] w-[1100px]">
@@ -118,7 +138,7 @@ function Third() {
     <div className="flex flex-col justify-center items-center">
       <div className="text-center mb-4">
         <h2 className="text-2xl font-bold font-[IRANSans] mb-4">
-          اپ ساز به شما کمک خواهد کرد
+          آوامین، همراه هوشمند سرمایه‌گذاری طلا
         </h2>
       </div>
       <div className="grid grid-cols-2 gap-6 h-auto max-w-3xl">
@@ -133,10 +153,10 @@ function Third() {
 
   // رندر موبایل
   const renderMobile = () => (
-    <div className="text-center h-auto w-full">
+    <div className="text-center h-auto w-full text-justify-last-right">
       <div className="mb-4">
         <h2 className="text-lg font-bold font-[IRANSans] mb-2">
-          اپ ساز به شما کمک خواهد کرد
+          آوامین، راه ساده خرید و فروش طلا
         </h2>
       </div>
       <div className="w-full mx-auto flex flex-col items-center py-10">

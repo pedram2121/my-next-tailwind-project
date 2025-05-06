@@ -22,13 +22,13 @@ function Footer() {
   }, []);
 
   const renderDesktop = () => (
-    <div className="relative h-auto w-full font-[IRANSans] bg-white z-50 pt-16 mt-24">
+    <div className="relative h-auto w-full font-[IRANSans] bg-white z-50 pt-16 mt-24 mb-14">
       <Container>
         <div className="grid grid-cols-4 gap-8 justify-center items-start text-center">
           <div className="flex flex-col items-center space-y-5">
-            <h1 className="font-bold">خبرنامه</h1>
+            <h1 className="font-bold">اخبار و پیشنهادهای طلایی</h1>
             <h1 className="font-medium text-gray-400 w-48">
-              هفته‌ای یک مقاله آموزشی برای شما ارسال خواهیم کرد
+              به‌روز بمانید با جدیدترین قیمت‌ها و پیشنهادهای ویژه آوامین
             </h1>
             <div className="flex flex-row-reverse">
               <input className="w-32 py-1 px-4 border" placeholder="ایمیل" />
@@ -44,21 +44,21 @@ function Footer() {
           </div>
 
           <div className="flex flex-col items-center space-y-5">
-            <h1 className="font-bold">پشتیبانی</h1>
-            <h1 className="font-medium text-gray-400">درباره ما</h1>
+            <h1 className="font-bold">حمایت از شما</h1>
+            <h1 className="font-medium text-gray-400">درباره آوامین</h1>
             <h1 className="font-medium text-gray-400">ویژگی‌ها</h1>
-            <h1 className="font-medium text-gray-400">قیمت</h1>
-            <h1 className="font-medium text-gray-400">دانلود</h1>
-            <h1 className="font-medium text-gray-400">مشتریان</h1>
+            <h1 className="font-medium text-gray-400">قیمت‌ها</h1>
+            <h1 className="font-medium text-gray-400">دانلود اپلیکیشن</h1>
+            <h1 className="font-medium text-gray-400">مشتریان ما</h1>
           </div>
 
           <div className="flex flex-col items-center space-y-5">
-            <h1 className="font-bold">راهنمای سایت</h1>
+            <h1 className="font-bold">راهنمای خرید طلا</h1>
             <h1 className="font-medium text-gray-400">درباره ما</h1>
             <h1 className="font-medium text-gray-400">ویژگی‌ها</h1>
-            <h1 className="font-medium text-gray-400">قیمت</h1>
-            <h1 className="font-medium text-gray-400">دانلود</h1>
-            <h1 className="font-medium text-gray-400">مشتریان</h1>
+            <h1 className="font-medium text-gray-400">قیمت‌ها</h1>
+            <h1 className="font-medium text-gray-400">دانلود اپلیکیشن</h1>
+            <h1 className="font-medium text-gray-400">مشتریان ما</h1>
           </div>
 
           <div className="flex flex-col items-center space-y-5">
@@ -69,8 +69,8 @@ function Footer() {
               height={48}
             />
             <h1 className="w-60 text-gray-500">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-              استفاده از طراحان گرافیک است
+              آوامین، همراه شما در خرید و فروش امن طلا با بهترین قیمت‌ها و
+              پشتیبانی 24 ساعته
             </h1>
           </div>
         </div>
@@ -90,33 +90,33 @@ function Footer() {
               height={24}
             />
             <h1 className="font-medium text-gray-400 w-48">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-              استفاده از طراحان گرافیک است
+              آوامین، همراه شما در خرید و فروش امن طلا با بهترین قیمت‌ها و
+              پشتیبانی 24 ساعته
             </h1>
           </div>
 
           <div className="flex flex-col items-center space-y-4">
-            <h1 className="font-bold text-lg">راهنمای سایت</h1>
+            <h1 className="font-bold text-lg">راهنمای خرید طلا</h1>
             <h1 className="font-medium text-gray-400">درباره ما</h1>
             <h1 className="font-medium text-gray-400">ویژگی‌ها</h1>
-            <h1 className="font-medium text-gray-400">قیمت</h1>
-            <h1 className="font-medium text-gray-400">دانلود</h1>
-            <h1 className="font-medium text-gray-400">مشتریان</h1>
+            <h1 className="font-medium text-gray-400">قیمت‌ها</h1>
+            <h1 className="font-medium text-gray-400">دانلود اپلیکیشن</h1>
+            <h1 className="font-medium text-gray-400">مشتریان ما</h1>
           </div>
 
           <div className="flex flex-col items-center space-y-4">
-            <h1 className="font-bold text-lg">پشتیبانی</h1>
+            <h1 className="font-bold text-lg">حمایت از شما</h1>
             <h1 className="font-medium text-gray-400">درباره ما</h1>
             <h1 className="font-medium text-gray-400">ویژگی‌ها</h1>
-            <h1 className="font-medium text-gray-400">قیمت</h1>
-            <h1 className="font-medium text-gray-400">دانلود</h1>
-            <h1 className="font-medium text-gray-400">مشتریان</h1>
+            <h1 className="font-medium text-gray-400">قیمت‌ها</h1>
+            <h1 className="font-medium text-gray-400">دانلود اپلیکیشن</h1>
+            <h1 className="font-medium text-gray-400">مشتریان ما</h1>
           </div>
 
           <div className="flex flex-col items-center space-y-4">
-            <h1 className="font-bold text-lg">خبرنامه</h1>
+            <h1 className="font-bold text-lg">اخبار و پیشنهادهای طلایی</h1>
             <h1 className="font-medium text-gray-400 w-48">
-              هفته‌ای یک مقاله آموزشی برای شما ارسال خواهیم کرد
+              به‌روز بمانید با جدیدترین قیمت‌ها و پیشنهادهای ویژه آوامین
             </h1>
             <div className="flex flex-row-reverse items-center space-x-2">
               <input className="w-28 py-1 px-4 border" placeholder="ایمیل" />
@@ -147,35 +147,35 @@ function Footer() {
               height={20}
             />
             <h1 className="text-[16px] text-right text-gray-500 w-full">
-              لورم ایپسوم متن ساختگی با تولید سادگی و انعطاف نامفهوم از صنعت چاپ
-              و با استفاده از طراحان گرافیک است
+              آوامین، همراه شما در خرید و فروش امن طلا با بهترین قیمت‌ها و
+              پشتیبانی 24 ساعته
             </h1>
           </div>
 
           <div className="grid grid-cols-2 gap-8 items-center text-right">
             <div className="space-y-2">
-              <h1 className="font-bold text-base">راهنمای سایت</h1>
+              <h1 className="font-bold text-base">راهنمای خرید طلا</h1>
               <h1 className="font-medium text-gray-400">درباره ما</h1>
               <h1 className="font-medium text-gray-400">ویژگی‌ها</h1>
-              <h1 className="font-medium text-gray-400">قیمت</h1>
-              <h1 className="font-medium text-gray-400">دانلود</h1>
-              <h1 className="font-medium text-gray-400">مشتریان</h1>
+              <h1 className="font-medium text-gray-400">قیمت‌ها</h1>
+              <h1 className="font-medium text-gray-400">دانلود اپلیکیشن</h1>
+              <h1 className="font-medium text-gray-400">مشتریان ما</h1>
             </div>
 
             <div className="space-y-2">
-              <h1 className="font-bold text-base">پشتیبانی</h1>
+              <h1 className="font-bold text-base">حمایت از شما</h1>
               <h1 className="font-medium text-gray-400">درباره ما</h1>
               <h1 className="font-medium text-gray-400">ویژگی‌ها</h1>
-              <h1 className="font-medium text-gray-400">قیمت</h1>
-              <h1 className="font-medium text-gray-400">دانلود</h1>
-              <h1 className="font-medium text-gray-400">مشتریان</h1>
+              <h1 className="font-medium text-gray-400">قیمت‌ها</h1>
+              <h1 className="font-medium text-gray-400">دانلود اپلیکیشن</h1>
+              <h1 className="font-medium text-gray-400">مشتریان ما</h1>
             </div>
           </div>
 
           <div className="flex flex-col w-full items-end px-3 space-y-6">
-            <h1 className="font-bold text-right">خبرنامه</h1>
+            <h1 className="font-bold text-right">اخبار و پیشنهادهای طلایی</h1>
             <h1 className="font-medium text-gray-500 w-full text-right">
-              هفته‌ای یک مقاله آموزشی برای شما ارسال خواهیم کرد
+              به‌روز بمانید با جدیدترین قیمت‌ها و پیشنهادهای ویژه آوامین
             </h1>
             <div className="flex flex-row-reverse w-full items-center">
               <input className="w-full h-10 px-4 border" placeholder="ایمیل" />

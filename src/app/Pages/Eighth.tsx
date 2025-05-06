@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { useResponsive } from "../components/ResponsiveContext"; 
+import { useResponsive } from "../components/ResponsiveContext";
 
 function Eighth() {
   const { isMobile, isTablet, isDesktop } = useResponsive();
 
   const renderDesktop = () => (
-    <div className="mx-auto max-w-screen-xl py-16 z-0 h-auto">
+    <div className="mx-auto max-w-screen-xl py-16 z-0 h-auto font-[IRANSans] ">
       <div className="grid grid-cols-3 gap-8 items-center justify-center text-center">
         {/* بخش تصویر چرخان */}
         <div className="relative w-80 h-80 mx-auto">
@@ -24,13 +24,11 @@ function Eighth() {
         </div>
 
         {/* بخش متن */}
-        <div className="relative text-right w-full font-bold text-[40px] space-y-4 font-[IRANSans]">
+        <div className="relative text-right w-full font-bold text-[36px] space-y-4 font-[IRANSans]">
           <div className="absolute w-full right-80 -top-20">
-            <h1>پاسخگوی سوالات شما</h1>
-
-            <h1>هستیم؛ با ما در ارتباط</h1>
-
-            <h1> :-) باشید </h1>
+            <h1>پشتیبانی آوامین در کنارتان</h1>
+            <h1>با ما در تماس باشید</h1>
+            <h1>همیشه کنار شما هستیم</h1>
           </div>
         </div>
 
@@ -73,9 +71,9 @@ function Eighth() {
 
         {/* بخش متن */}
         <div className="text-right font-bold text-3xl space-y-3">
-          <h1>پاسخگوی سوالات شما</h1>
-          <h1>هستیم؛ با ما در ارتباط</h1>
-          <h1> :-) باشید </h1>
+          <h1>پشتیبانی آوامین در کنارتان</h1>
+          <h1>با ما در تماس باشید</h1>
+          <h1>همیشه کنار شما هستیم! 🙂</h1>
         </div>
 
         {/* بخش تصویر و دکمه */}
@@ -99,25 +97,24 @@ function Eighth() {
   );
 
   const renderMobile = () => (
-    <div className="container mx-auto px-4 py-32 z-0">
+    <div className="container mx-auto px-4 py-32 z-0 text-justify-last-right font-[IRANSans]">
       <div className="flex flex-col gap-6 items-center justify-center text-center">
-        
-
         {/* بخش متن */}
         <div className="text-right font-bold text-2xl space-y-3">
-          <h1>پاسخگوی سوالات شما</h1>
-          <h1>هستیم؛ با ما در ارتباط</h1>
-          <h1> :-) باشید </h1>
+          <h1>پشتیبانی آوامین در کنارتان</h1>
+          <h1>با ما در تماس باشید</h1>
+          <h1> 🙂همیشه کنار شما هستیم </h1>
         </div>
 
         {/* بخش تصویر و دکمه */}
         <div className="relative w-full flex flex-col items-center mb-20">
-          <button className="bg-pink-500 px-6 py-2 rounded-3xl
-           text-white text-sm hover:bg-pink-600 transition absolute right-44">
+          <button
+            className="bg-pink-500 px-6 py-2 rounded-3xl
+           text-white text-sm hover:bg-pink-600 transition absolute right-44"
+          >
             تماس با ما
           </button>
         </div>
-
       </div>
     </div>
   );

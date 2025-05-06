@@ -17,15 +17,15 @@ const pulseAnimation = `
 
 // Desktop View Component
 const DesktopView: React.FC = () => {
-  
   const containerStyles =
     "flex flex-row items-center justify-center min-h-[600px] bg-gradient-to-r from-purple-800 to-pink-500 text-white px-4 py-12 relative overflow-hidden";
   const imgContainerStyles = "flex justify-center w-[430px] pr-8";
   const textContainerStyles =
-    "flex flex-col items-center space-y-6 w-1/2 text-right pr-8";
-  const buttonContainerStyles = "flex justify-end space-x-4 mt-4";
+    "flex flex-col items-center space-y-6 w-1/2 text-right pr-8 font-[IRANSans] text-justify-last-right";
+  const buttonContainerStyles =
+    "flex justify-end space-x-4 mt-4 font-[IRANSans] text-justify-last-right";
   const deviceStyles = "w-full max-w-[600px]";
-  const textSize = "text-4xl";
+  const textSize = "text-4xl font-[IRANSans]";
   const paragraphSize = "text-lg";
   const buttonSize = "h-12";
 
@@ -54,13 +54,14 @@ const DesktopView: React.FC = () => {
       </div>
       <div className={textContainerStyles}>
         <h1 className={`font-bold font-[IRANSans] leading-tight ${textSize}`}>
-          هم اکنون اپ ساز برای تمام
+          حالا آوامین برای همه دستگاه‌ها
           <br />
-          دستگاه ها قابل دانلود است
+          قابل دانلود است
         </h1>
         <p className={`leading-relaxed max-w-md ${paragraphSize}`}>
-          سهم اینترنت گردی با موبایل 80% است؛ بنابراین سایت شما نیاز به یک
-          اپلیکیشن حرفه ای دارد.
+          با آوامین، خرید و فروش طلای خود را در هر لحظه و از هر دستگاهی مدیریت
+          کنید. بیش از ۸۰٪ کاربران از موبایل استفاده می‌کنند، پس اپلیکیشن ما
+          همیشه همراه شماست
         </p>
         <div className={buttonContainerStyles}>
           <a
@@ -135,13 +136,14 @@ const TabletView: React.FC = () => {
       </div>
       <div className={textContainerStyles}>
         <h1 className={`font-bold font-[IRANSans] leading-tight ${textSize}`}>
-          هم اکنون اپ ساز برای تمام
+          حالا آوامین برای همه دستگاه‌ها
           <br />
-          دستگاه ها قابل دانلود است
+          قابل دانلود است
         </h1>
         <p className={`leading-relaxed max-w-md ${paragraphSize}`}>
-          سهم اینترنت گردی با موبایل 80% است؛ بنابراین سایت شما نیاز به یک
-          اپلیکیشن حرفه ای دارد.
+          با آوامین، خرید و فروش طلای خود را در هر لحظه و از هر دستگاهی مدیریت
+          کنید. بیش از ۸۰٪ کاربران از موبایل استفاده می‌کنند، پس اپلیکیشن ما
+          همیشه همراه شماست!
         </p>
         <div className={buttonContainerStyles}>
           <a
@@ -195,8 +197,10 @@ const MobileView: React.FC = () => {
     <div className={containerStyles}>
       <style>{pulseAnimation}</style>
       <div className="relative">
-        <div className="absolute -top-80 -left-60 w-40 h-40 bg-purple-300 rounded-full
-         opacity-20 animate-[pulse_3s_ease-in-out_infinite]" />
+        <div
+          className="absolute -top-80 -left-60 w-40 h-40 bg-purple-300 rounded-full
+         opacity-20 animate-[pulse_3s_ease-in-out_infinite]"
+        />
       </div>
       <div className="absolute -bottom-1 left-2 w-[100px] h-[100px] opacity-50">
         <Image
@@ -216,19 +220,18 @@ const MobileView: React.FC = () => {
         />
       </div>
       <div className={`textContainerStyles relative`}>
-
         <div className="absolute -top-40 left-56 px-6 w-full">
-         <h1 className={` font-bold font-[IRANSans] leading-tight ${textSize}`}>
-          آوامین
-        </h1>
+          <h1 className={`font-bold font-[IRANSans] leading-tight ${textSize}`}>
+            حالا آوامین را دانلود کنید
+          </h1>
         </div>
-       
-        <p className={` absolute -top-24 left-0 leading-relaxed max-w-md
-           text-justify-last-right font-[IRANSans] w-full  ${paragraphSize}`}>
-        در آوامین، ما تلاش کردیم تا با استفاده از تکنولوژی‌های نوین و هوش مصنوعی، تمامی فرایندها را به صورت خودکار انجام دهیم. این سیستم به گونه‌ای طراحی شده است که تمامی موارد به صورت دقیق و بدون خطا در سیستم حسابداری شما سند بخورد
+        <p
+          className={`absolute -top-24 left-0 leading-relaxed max-w-md
+           text-justify-last-right font-[IRANSans] w-full ${paragraphSize}`}
+        >
+          با آوامین، قیمت طلا را لحظه‌ای دنبال کنید و معاملات خود را با امنیت
+          بالا انجام دهید. اپلیکیشن ما برای راحتی شما در هر زمان در دسترسه!
         </p>
-
-        
         <div className={buttonContainerStyles}>
           <a
             href="https://play.google.com"

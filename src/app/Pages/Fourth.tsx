@@ -14,12 +14,11 @@ function Fourth() {
 
   // لیست تصاویر
   const screenshots = [
-    "/images/1.jpg",
-    "/images/2.jpg",
-    "/images/3.jpg",
-    "/images/4.jpg",
-    "/images/5.jpg",
-    "/images/6.jpg",
+    "/images/1.png",
+    "/images/2.png",
+    "/images/3.png",
+    "/images/4.png",
+    "/images/5.png",
   ];
 
   // اندازه‌های مختلف برای دستگاه‌ها
@@ -27,7 +26,7 @@ function Fourth() {
   const textSize = isMobile ? "text-sm" : isTablet ? "text-base" : "text-lg";
   const imageWidth = isMobile ? 180 : isTablet ? 300 : 300; // کوچیک‌تر برای دسکتاپ
   const imageHeight = isMobile ? 500 : isTablet ? 600 : 600; // کوچیک‌تر برای دسکتاپ
-  const spaceBetween = isMobile ? -100 : isTablet ? 30 : -200; // نزدیک‌تر برای دسکتاپ
+  const spaceBetween = isMobile ? -100 : isTablet ? 30 : -300; // نزدیک‌تر برای دسکتاپ
   const slidesPerView = isMobile ? 1.0 : isTablet ? 1.5 : 2.5;
 
   // چیدمان برای دسکتاپ یا تبلت/موبایل
@@ -64,8 +63,8 @@ function Fourth() {
             spaceBetween={spaceBetween}
             slidesPerView={slidesPerView}
             navigation
-            className="mySwiper"
-          >
+            className="mySwiper" >
+         
             {screenshots.map((src, index) => (
               <SwiperSlide key={index}>
                 <div className="flex justify-center">
@@ -74,7 +73,7 @@ function Fourth() {
                     alt={`اسکرین‌شات ${index + 1}`}
                     width={imageWidth}
                     height={imageHeight}
-                    className="object-contain rounded-lg shadow-md"
+                    className="object-contain"
                   />
                 </div>
               </SwiperSlide>

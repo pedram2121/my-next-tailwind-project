@@ -28,7 +28,8 @@ function ScrollToTopButton() {
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-purple-600 text-white rounded-full p-4 shadow-lg hover:bg-purple-700 transition-opacity duration-300 z-50"
+          className="fixed bottom-8 right-8 bg-purple-600 text-white rounded-full 
+          p-4 shadow-lg hover:bg-purple-700 transition-opacity duration-300 z-100"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
