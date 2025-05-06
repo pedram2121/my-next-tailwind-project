@@ -30,6 +30,7 @@ const DesktopView: React.FC = () => {
   const buttonSize = "h-12";
 
   return (
+    
     <div className={containerStyles}>
       <style>{pulseAnimation}</style>
       <div className="relative">
@@ -221,7 +222,7 @@ const MobileView: React.FC = () => {
       </div>
       <div className={`textContainerStyles relative`}>
         <div className="absolute -top-40 left-56 px-6 w-full">
-          <h1 className={`font-bold font-[IRANSans] leading-tight ${textSize}`}>
+          <h1 className={` absolute font-bold font-[IRANSans] w-full leading-tight right-[150px] ${textSize}`}>
             حالا آوامین را دانلود کنید
           </h1>
         </div>

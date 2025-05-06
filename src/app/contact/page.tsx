@@ -31,7 +31,7 @@ function Contact() {
                 className="object-contain group-hover:scale-110 transition-transform duration-300"
               />
               <p className="text-lg text-gray-700 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
-                شماره تماس: ۱۲۳۴۵۶۷۸
+                شماره تماس: 09121277336
               </p>
             </div>
             {/* ایمیل */}
@@ -223,7 +223,7 @@ function Contact() {
                 className="object-contain group-hover:scale-110 transition-transform duration-300 w-7 h-7"
               />
               <p className="text-sm text-gray-700 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
-                شماره تماس: ۱۲۳۴۵۶۷۸
+                شماره تماس: 09121277336
               </p>
             </div>
             {/* ایمیل */}

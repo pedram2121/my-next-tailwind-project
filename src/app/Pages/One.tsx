@@ -47,49 +47,47 @@ function One() {
       icon: "/images/phone1.png",
       color: "white",
       hoverColor: "hover:bg-blue-400",
-      link: "@Abehbahani",
+      link: "tel:+989121277336",
     },
     {
       name: "whatsapp",
       icon: "/images/whatsapp.png",
       color: "white",
       hoverColor: "hover:bg-green-600",
-      link: "https://wa.me/00989121277336",
+      link: "https://wa.me/+989121277336",
     },
     {
       name: "instagram",
       icon: "/images/instagram.png",
       color: "white",
       hoverColor: "hover:bg-pink-600",
-      link: "https://instagram.com/yourprofile",
+      link: "https://www.instagram.com/avoamin",
     },
     {
       name: "cellphone",
       icon: "/images/call.png",
       color: "white",
       hoverColor: "hover:bg-gray-600",
-      link: "00989121277336",
+      link: "tel:+989121277336",
     },
   ];
 
   const renderDesktop = () => (
-
     <div className="grid grid-cols-2 w-full gap-14 items-center place-items-center h-screen py-0 pb-[200px]">
-
-      <motion.div className="mt-48 w-full relative"
+      <motion.div
+        className="mt-48 w-full relative"
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }} >
-
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <Image className="w-full h-full" src={hero} alt="hero" />
-
         {showButtons && (
           <motion.div
             className="absolute -left-16 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 1 }}>
-         
+            transition={{ duration: 0.5, ease: "easeOut", delay: 1 }}
+          >
             {socialButtons.map((button, index) => (
               <motion.a
                 key={button.name}
@@ -97,40 +95,36 @@ function One() {
                 className={`w-14 h-14 rounded-full ${button.color} ${button.hoverColor} flex items-center justify-center shadow-xl transition-transform hover:scale-110`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 1 + index * 0.2 }} >
-             
-                <Image src={button.icon}
+                transition={{ duration: 0.3, delay: 1 + index * 0.2 }}
+              >
+                <Image
+                  src={button.icon}
                   alt={button.name}
                   width={24}
                   height={24}
-                  className="object-contain w-14 h-14" />
-
+                  className="object-contain w-14 h-14"
+                />
               </motion.a>
             ))}
           </motion.div>
         )}
       </motion.div>
-
-
-
       <motion.div
         className="flex flex-col justify-center items-center w-full text-center space-y-10"
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }} >
-     
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+      >
         <div className="relative w-full">
           <div className="text-[30px] right-0 bottom-10 font-bold text-gray-800 absolute">
             آوامین: آوای امنیت
           </div>
         </div>
-
         <div className="relative w-full">
           <p className="text-gray-600 text-justify-last-right text-[17px]">
             {texts[0]}
           </p>
         </div>
-
         <div className="w-full relative">
           <div className="text-[16px] text-gray-500 text-justify-last-right space-y-4 absolute right-1/12 mt-14 w-[500px]">
             <p>{texts[1]}</p>
@@ -198,26 +192,25 @@ function One() {
   );
 
   const renderMobile = () => (
-
-    <div className="flex flex-col items-center justify-center text-center space-y-6 py-18"
-      {...handlers} >
-    
+    <div
+      className="flex flex-col items-center justify-center text-center space-y-6 py-18"
+      {...handlers}
+    >
       <motion.div
         className="mt-12 relative"
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }} >
-
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <Image className="w-full h-full" src={hero} alt="hero" />
-
         {/* دکمه‌های اجتماعی */}
         {showButtons && (
           <motion.div
             className="flex justify-center space-x-3 mt-4 mb-6 rtl:space-x-reverse"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 1 }}>
-         
+            transition={{ duration: 0.5, ease: "easeOut", delay: 1 }}
+          >
             {socialButtons.map((button, index) => (
               <motion.a
                 key={button.name}
@@ -225,8 +218,8 @@ function One() {
                 className={`w-10 h-10 rounded-full ${button.color} ${button.hoverColor} flex items-center justify-center shadow-md transition-transform hover:scale-110`}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 1 + index * 0.2 }}>
-              
+                transition={{ duration: 0.3, delay: 1 + index * 0.2 }}
+              >
                 <Image
                   src={button.icon}
                   alt={button.name}
@@ -239,7 +232,6 @@ function One() {
           </motion.div>
         )}
       </motion.div>
-
       <motion.div
         className="flex flex-col justify-center items-center w-full text-center space-y-4"
         initial={{ y: 100, opacity: 0 }}
@@ -249,7 +241,6 @@ function One() {
         <div className="text-[14px] font-bold text-gray-600">
           آوامین: آوای امنیت
         </div>
-
         <motion.div
           key={currentPage}
           initial={{ opacity: 0, y: 20 }}
@@ -259,7 +250,6 @@ function One() {
         >
           {texts[currentPage]}
         </motion.div>
-
         <div className="flex justify-center space-x-3 mt-6 rtl:space-x-reverse">
           {texts.map((_, index) => (
             <button
