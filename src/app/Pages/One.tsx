@@ -47,14 +47,14 @@ function One() {
       icon: "/images/phone1.png",
       color: "white",
       hoverColor: "hover:bg-blue-400",
-      link: "tel:+1234567890",
+      link: "@Abehbahani",
     },
     {
       name: "whatsapp",
       icon: "/images/whatsapp.png",
       color: "white",
       hoverColor: "hover:bg-green-600",
-      link: "https://wa.me/1234567890",
+      link: "https://wa.me/00989121277336",
     },
     {
       name: "instagram",
@@ -68,7 +68,7 @@ function One() {
       icon: "/images/call.png",
       color: "white",
       hoverColor: "hover:bg-gray-600",
-      link: "",
+      link: "00989121277336",
     },
   ];
 
