@@ -9,27 +9,14 @@ function Price() {
 
   const cards = [
     {
-      title: "ساله 1",
-      price: "5000 تومان / سالانه",
-      description: `۵۰٪ افزایش ترافیک پشتیبانی ایمیلی بهینه‌سازی رایگان پشتیبانی ۲۴/۷`,
-      date: "انتشار: ۱۴۰۳/۰۱/۰۱",
-    },
-    {
-      title: "ساله 2",
-      price: "10000 تومان / سالانه",
-      description: `۵۰٪ افزایش ترافیک پشتیبانی ایمیلی بهینه‌سازی رایگان پشتیبانی ۲۴/۷`,
-      date: "انتشار: ۱۴۰۳/۰۱/۰۱",
-    },
-    {
-      title: "ساله 3",
-      price: "20000 تومان / سالانه",
-      description: `۵۰٪ افزایش ترافیک پشتیبانی ایمیلی بهینه‌سازی رایگان پشتیبانی ۲۴/۷`,
-      date: "انتشار: ۱۴۰۳/۰۱/۰۱",
+      title: " خرید ",
+      price: "قیمت لحظه ای",
+      description: `آوامین؛ پلتفرم هوشمند خرید و فروش طلا با تجربه‌ای امن و ساده. مدیریت آسان محصولات، تراکنش‌های مطمئن و پشتیبانی ۲۴ ساعته در طول هفته برای موفقیت شما در بازار طلا`,
     },
   ];
 
   const renderDesktop = () => (
-    <div className="bg-white py-32">
+    <div className="bg-white py-12 mt-20">
       {/* بخش تصویر و کاور گرادیانتی */}
       <div className="relative w-full h-[400px]">
         <Image
@@ -90,19 +77,15 @@ function Price() {
                   {card.price}
                 </p>
 
-                <p className="font-[IRANSans] mb-9 text-gray-600 text-lg">
+                <p className="font-[IRANSans] mb-9 text-gray-600 text-[16px] text-justify-last-right">
                   {card.description}
-                </p>
-
-                <p className="font-[IRANSans] mb-9 text-gray-400 text-lg">
-                  {card.date}
                 </p>
 
                 <button
                   className="relative bg-purple-500 text-white font-[IRANSans]
-                      py-4 px-12 rounded-lg overflow-hidden transition-all duration-300"
+                      py-4 px-12 rounded-lg overflow-hidden transition-all duration-300 cursor-pointer"
                 >
-                  <span className="relative z-10">شروع کنید</span>
+                  <span className="relative z-10"> تماس با ما </span>
                   <span
                     className="absolute top-0 left-0 w-full h-full bg-red-500 transform 
                       -translate-x-full transition-transform duration-300 ease-in-out group-hover:translate-x-0"
@@ -167,9 +150,6 @@ function Price() {
                 <p className="font-[IRANSans] mb-2 text-gray-600 text-base">
                   {card.description}
                 </p>
-                <p className="font-[IRANSans] mb-4 text-gray-400 text-base">
-                  {card.date}
-                </p>
 
                 {/* دکمه */}
                 <button className="relative bg-purple-500 text-white font-[IRANSans] py-2 px-6 rounded-lg overflow-hidden group/button">
@@ -185,7 +165,7 @@ function Price() {
   );
 
   const renderMobile = () => (
-    <div className="bg-white py-10 overflow-x-hidden h-auto">
+    <div className="bg-white py-20 overflow-x-hidden overflow-y-auto h-auto mt-14 mb-20">
       {/* بخش تصویر و کاور گرادیانتی */}
       <div className="relative w-full h-[300px]">
         <Image
@@ -200,7 +180,7 @@ function Price() {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-pink-700 to-purple-900 opacity-95"></div>
 
         <h1
-          className="absolute w-full top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+          className="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
           text-white font-[IRANSans] font-bold text-2xl text-center px-5"
         >
           بهترین قیمت های آوامین
@@ -208,7 +188,7 @@ function Price() {
       </div>
 
       {/* بخش کارت‌ها */}
-      <div className="-mt-28 h-auto px-2">
+      <div className="-mt-16 h-auto px-2">
         <div className="grid grid-cols-1 gap-6 justify-items-center w-full mx-auto">
           {cards.map((card, index) => (
             <div key={index} className="relative w-full max-w-[300px] group">
@@ -230,7 +210,7 @@ function Price() {
               <div
                 className="relative bg-white rounded-lg shadow-md p-4 h-96
                text-center transition-transform duration-300
-               transform group-hover:-translate-y-4 group-hover:shadow-lg z-10"
+               transform group-hover:-translate-y-4 group-hover:shadow-lg z-10 space-y-8"
               >
                 <h3 className="font-bold font-[IRANSans] mb-2 text-gray-500 text-2xl mt-5">
                   {card.title}
@@ -240,17 +220,13 @@ function Price() {
                   {card.price}
                 </p>
 
-                <p className="font-[IRANSans] mb-2 text-gray-600 text-[16px] mt-9">
+                <p className="font-[IRANSans] mb-2 text-gray-600 text-[14px] mt-9 text-justify-last-right">
                   {card.description}
                 </p>
 
-                <p className="font-[IRANSans] mb-4 text-gray-400 text-sm mt-7">
-                  {card.date}
-                </p>
-
                 {/* دکمه */}
-                <button className="relative bg-purple-500 text-white font-[IRANSans] py-4 px-10 rounded-lg overflow-hidden group/button">
-                  <span className="relative z-10">شروع کنید</span>
+                <button className="relative bg-purple-500 text-white font-[IRANSans] py-4 px-10 rounded-lg overflow-hidden group/button mt-6 cursor-pointer">
+                  <span className="relative z-10"> تماس با ما </span>
                   <span
                     className="absolute top-0 left-0 w-full h-full bg-red-500 transform -translate-x-full
                    transition-transform duration-300 ease-in-out group-hover/button:translate-x-0"

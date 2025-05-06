@@ -57,13 +57,6 @@ function One() {
       link: "https://wa.me/+989121277336",
     },
     {
-      name: "instagram",
-      icon: "/images/instagram.png",
-      color: "white",
-      hoverColor: "hover:bg-pink-600",
-      link: "https://www.instagram.com/avoamin",
-    },
-    {
       name: "cellphone",
       icon: "/images/call.png",
       color: "white",
