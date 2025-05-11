@@ -6,89 +6,343 @@ import Image from "next/image";
 function Contact() {
   const { isMobile, isTablet, isDesktop } = useResponsive();
   const [successMessage, setSuccessMessage] = useState("");
+  const [showButtons, setShowButtons] = useState(false);
 
   const handleSubmit = () => {
     setSuccessMessage("پیام شما با موفقیت ارسال شد!");
-    setTimeout(() => setSuccessMessage(""), 3000); // پیام بعد از 3 ثانیه مخفی می‌شود
+    setTimeout(() => setSuccessMessage(""), 3000);
   };
 
+  const toggleButtons = () => {
+    setShowButtons(!showButtons);
+  };
+
+  const socialButtons = [
+    {
+      name: "تماس",
+      icon: "/images/call1.png",
+      color: "bg-blue-500",
+      hoverColor: "hover:bg-blue-600",
+      link: "tel:+989121277336",
+      label: "تماس",
+      alt: "آیکون تماس",
+    },
+    {
+      name: "واتساپ",
+      icon: "/images/whatsapp1.png",
+      color: "bg-green-500",
+      hoverColor: "hover:bg-green-600",
+      link: "https://wa.me/+989121277336",
+      label: "واتساپ",
+      alt: "آیکون واتساپ",
+    },
+    {
+      name: "تلگرام",
+      icon: "/images/Telegram1.png",
+      color: "bg-sky-500",
+      hoverColor: "hover:bg-sky-600",
+      link: "https://t.me/Abehbahani",
+      label: "تلگرام",
+      alt: "آیکون تلگرام",
+    },
+    {
+      name: "ایمیل",
+      icon: "/images/email1.png",
+      color: "bg-blue-600",
+      hoverColor: "hover:bg-blue-700",
+      link: "mailto:designer@siratan.com",
+      label: "ایمیل",
+      alt: "آیکون ایمیل",
+    },
+  ];
+
   const renderDesktop = () => (
-    <div className="min-h-screen w-full bg-gradient-to-b from-purple-100 to-white flex items-center justify-center py-12 px-8">
-      <div className="flex flex-col items-center w-3/5">
-        <h1 className="text-4xl font-bold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-6">
+    <div className="min-h-screen w-full bg-gradient-to-b from-purple-100 to-white flex items-center justify-center py-20 px-8 relative">
+      <div className="flex flex-col items-center w-3/5 h-auto py-40">
+        <h1 className="text-5xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent pb-20">
           تماس با ما
         </h1>
+
         <div className="w-full bg-white rounded-xl shadow-lg p-8 flex flex-row gap-12">
-          {/* بخش اطلاعات تماس */}
           <div className="w-full flex flex-col space-y-8">
-            <h1 className="text-3xl font-bold font-[IRANSans] mb-20 text-left bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-              ارتباط با تیم اجرایی
+            <h1 className="text-3xl font-extrabold font-[IRANSans] mb-20 text-left bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+              ارتباط با تیم اجرایی آوامین
             </h1>
+
             <div className="space-y-6">
-              {/* شماره تلفن */}
               <div className="flex items-center gap-4 group">
                 <Image
-                  src="/images/phone.png"
-                  alt="Phone Icon"
-                  width={28}
-                  height={28}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
+                  src="/images/call2.png"
+                  alt="آیکون شماره تماس"
+                  width={32}
+                  height={32}
+                  className="object-contain group-hover:scale-110 transition-transform duration-300 w-11 h-11"
                 />
-                <p className="text-lg text-gray-700 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
+                <p className="text-xl font-bold text-gray-700 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
                   شماره تماس: 09121277336
                 </p>
               </div>
-              {/* ایمیل */}
-              <div className="flex items-center gap-4 group w-8 h-8">
+
+              <div className="flex items-center gap-4 group">
                 <Image
-                  src="/images/home.png"
-                  alt="Email Icon"
-                  width={50}
-                  height={50}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
+                  src="/images/email2.png"
+                  alt="آیکون ایمیل"
+                  width={32}
+                  height={32}
+                  className="object-contain group-hover:scale-110 transition-transform duration-300 w-11 h-11"
                 />
-                <p className="text-lg text-gray-700 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
+                <p className="text-xl font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
                   designer@siratan.com
                 </p>
               </div>
-              {/* آدرس */}
+
               <div className="flex items-center gap-4 group">
                 <Image
-                  src="/images/location.png"
-                  alt="Location Icon"
-                  width={28}
-                  height={28}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300 w-10 h-10"
+                  src="/images/location2.png"
+                  alt="آیکون موقعیت مکانی"
+                  width={32}
+                  height={32}
+                  className="object-contain group-hover:scale-110 transition-transform duration-300 w-11 h-11"
                 />
-                <p className="text-lg text-gray-700 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
+                <p className="text-xl font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
                   نشانی: تهران، خیابان آزادی، پلاک ۱
                 </p>
               </div>
             </div>
           </div>
 
-          {/* فرم تماس */}
-          <div className="w-1/2 flex flex-col space-y-6">
+          <div className="w-full flex flex-col space-y-6">
             <div className="relative flex flex-col space-y-5">
-              <div className="relative">
+              <div className="relative group">
                 <input
                   type="text"
                   placeholder="نام و نام خانوادگی"
-                  className="w-full border border-gray-300 rounded-lg p-3 pr-10 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
+                  className="w-full border border-gray-300 pr-16 rounded-lg p-3 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                 />
-                <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-                  👤
-                </span>
+                <Image
+                  src="/images/user1.png"
+                  alt="آیکون کاربر"
+                  width={40}
+                  height={40}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 transition-all duration-300 group-focus-within:opacity-50"
+                />
               </div>
-              <div className="relative">
+
+              <div className="relative group">
                 <input
                   type="email"
                   placeholder="ایمیل"
-                  className="w-full border border-gray-300 rounded-lg p-3 pr-10 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
+                  className="w-full border border-gray-300 pr-16 rounded-lg p-3 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                 />
-                <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-                  ✉️
+                <Image
+                  src="/images/email3.png"
+                  alt="آیکون ایمیل فرم"
+                  width={40}
+                  height={40}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 transition-all duration-300 group-focus-within:opacity-50"
+                />
+              </div>
+
+              <textarea
+                placeholder="پیام شما"
+                rows={4}
+                className="w-full border border-gray-300 rounded-lg p-3 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300 resize-none"
+              ></textarea>
+            </div>
+
+            <button
+              onClick={handleSubmit}
+              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-[IRANSans] py-3 px-8 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
+            >
+              ارسال
+            </button>
+            {successMessage && (
+              <div className="text-green-600 font-[IRANSans] text-center bg-green-100 p-2 rounded-lg animate-fade-in">
+                {successMessage}
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="w-full mt-8 bg-white rounded-xl shadow-lg p-6 grid grid-cols-2 gap-6">
+          <div className="flex flex-col items-center text-center">
+            <h2 className="text-xl font-extrabold text-gray-800 font-[IRANSans] mb-4">
+              نحوه ارتباط با ما
+            </h2>
+            <div className="space-y-3 text-gray-700 font-[IRANSans]">
+              <p className="text-base font-semibold">شماره تماس: 09121277336</p>
+              <a
+                href="https://wa.me/+989121277336"
+                className="block text-blue-500 hover:text-blue-700 transition-colors"
+              >
+                واتساپ: 00989121277336
+              </a>
+              <a
+                href="https://t.me/Abehbahani"
+                className="block text-sky-500 hover:text-sky-700 transition-colors"
+              >
+                تلگرام: @Abehbahani
+              </a>
+              <a
+                href="mailto:designer@siratan.com"
+                className="block text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                ایمیل: designer@siratan.com
+              </a>
+            </div>
+            <p className="text-sm text-gray-600 mt-4 font-[IRANSans]">
+              با تیم آوامین در تماس باشید تا بهترین خدمات را تجربه کنید
+            </p>
+          </div>
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.1744017143787!2d51.37417457552437!3d35.72071167257534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e013e6e229a4b%3A0x6b6b37b1f079c46b!2sAzadi%20St%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus"
+              width="100%"
+              height="250"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div className="fixed bottom-10 right-10 flex flex-col items-end gap-6 z-50">
+        {showButtons && (
+          <div className="flex flex-col gap-3">
+            {socialButtons.map((button, index) => (
+              <div
+                key={button.name}
+                className={
+                  "flex flex-row-reverse items-center gap-2 transform transition-all duration-300 ease-in-out animate-shake " +
+                  (showButtons
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 -translate-y-10")
+                }
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <a
+                  href={button.link}
+                  className={
+                    "w-12 h-12 rounded-full " +
+                    button.color +
+                    " " +
+                    button.hoverColor +
+                    " flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300 animate-shake"
+                  }
+                >
+                  <Image
+                    src={button.icon}
+                    alt={button.alt}
+                    width={32}
+                    height={32}
+                    className="object-contain w-full h-full"
+                  />
+                </a>
+                <span className="text-gray-800 text-sm font-[IRANSans] font-semibold">
+                  {button.label}
                 </span>
+              </div>
+            ))}
+          </div>
+        )}
+        <button
+          onClick={toggleButtons}
+          className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center shadow-lg animate-shake hover:scale-110 transition-transform duration-300"
+        >
+          <Image
+            src={showButtons ? "/images/close.png" : "/images/call.png"}
+            alt={showButtons ? "آیکون بستن" : "آیکون تماس"}
+            width={32}
+            height={32}
+            className="object-contain w-full h-full"
+          />
+        </button>
+      </div>
+    </div>
+  );
+
+  const renderTablet = () => (
+    <div className="min-h-screen bg-gradient-to-b from-purple-100 to-white flex items-center justify-center py-12 px-6 relative">
+      <div className="flex flex-col items-center w-full max-w-4xl">
+        <h1 className="text-4xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-8">
+          تماس با ما
+        </h1>
+        <div className="w-full bg-white rounded-xl shadow-lg p-8 flex flex-col gap-8">
+          <div className="flex flex-col space-y-6">
+            <h2 className="text-2xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+              ارتباط با تیم اجرایی آوامین
+            </h2>
+            <div className="space-y-5">
+              <div className="flex items-center gap-3 group">
+                <Image
+                  src="/images/call2.png"
+                  alt="آیکون شماره تماس"
+                  width={28}
+                  height={28}
+                  className="object-contain group-hover:scale-110 transition-transform duration-300"
+                />
+                <p className="text-lg font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
+                  شماره تماس: 09121277336
+                </p>
+              </div>
+              <div className="flex items-center gap-3 group">
+                <Image
+                  src="/images/email2.png"
+                  alt="آیکون ایمیل"
+                  width={28}
+                  height={28}
+                  className="object-contain group-hover:scale-110 transition-transform duration-300"
+                />
+                <p className="text-lg font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
+                  designer@siratan.com
+                </p>
+              </div>
+              <div className="flex items-center gap-3 group">
+                <Image
+                  src="/images/location2.png"
+                  alt="آیکون موقعیت مکانی"
+                  width={28}
+                  height={28}
+                  className="object-contain group-hover:scale-110 transition-transform duration-300"
+                />
+                <p className="text-lg font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
+                  نشانی: تهران، خیابان آزادی، پلاک ۱
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col space-y-5">
+            <div className="relative flex flex-col space-y-4">
+              <div className="relative group">
+                <input
+                  type="text"
+                  placeholder="نام و نام خانوادگی"
+                  className="w-full border border-gray-300 rounded-lg p-3 pr-12 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
+                />
+                <Image
+                  src="/images/user1.png"
+                  alt="آیکون کاربر"
+                  width={32}
+                  height={32}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 transition-all duration-300 group-focus-within:opacity-50"
+                />
+              </div>
+              <div className="relative group">
+                <input
+                  type="email"
+                  placeholder="ایمیل"
+                  className="w-full border border-gray-300 rounded-lg p-3 pr-12 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
+                />
+                <Image
+                  src="/images/email3.png"
+                  alt="آیکون ایمیل فرم"
+                  width={32}
+                  height={32}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 transition-all duration-300 group-focus-within:opacity-50"
+                />
               </div>
               <textarea
                 placeholder="پیام شما"
@@ -98,7 +352,7 @@ function Contact() {
             </div>
             <button
               onClick={handleSubmit}
-              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-[IRANSans] py-3 px-8 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-[IRANSans] py-3 px-6 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
             >
               ارسال
             </button>
@@ -107,225 +361,329 @@ function Contact() {
                 {successMessage}
               </div>
             )}
+          </div>
+        </div>
+
+        <div className="w-full mt-6 bg-white rounded-xl shadow-lg p-6 grid grid-cols-2 gap-6">
+          <div className="flex flex-col items-center text-center">
+            <h2 className="text-lg font-extrabold text-gray-800 font-[IRANSans] mb-3">
+              نحوه ارتباط با ما
+            </h2>
+            <div className="space-y-2 text-gray-700 font-[IRANSans]">
+              <p className="text-base font-semibold">شماره تماس: 09121277336</p>
+              <a
+                href="https://wa.me/+989121277336"
+                className="block text-blue-500 hover:text-blue-700 transition-colors"
+              >
+                واتساپ: +989121277336
+              </a>
+              <a
+                href="https://t.me/Abehbahani"
+                className="block text-sky-500 hover:text-sky-700 transition-colors"
+              >
+                تلگرام: @Abehbahani
+              </a>
+              <a
+                href="mailto:designer@siratan.com"
+                className="block text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                ایمیل: designer@siratan.com
+              </a>
+            </div>
+            <p className="text-sm text-gray-600 mt-3 font-[IRANSans]">
+              با تیم آوامین در تماس باشید تا بهترین خدمات را تجربه کنید!
+            </p>
+          </div>
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.1744017143787!2d51.37417457552437!3d35.72071167257534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e013e6e229a4b%3A0x6b6b37b1f079c46b!2sAzadi%20St%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus"
+              width="100%"
+              height="200"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
-    </div>
-  );
 
-  const renderTablet = () => (
-    <div className="min-h-screen bg-gradient-to-b from-purple-100 to-white flex items-center justify-center py-10 px-6">
-      <div className="flex flex-col items-center">
-        <h1 className="text-3xl font-bold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-6">
-          تماس با ما
-        </h1>
-        <div className="max-w-3xl w-full bg-white rounded-xl shadow-lg p-6 flex flex-col gap-8">
-          {/* بخش اطلاعات تماس */}
-          <div className="flex flex-col space-y-6">
-            <h1 className="text-3xl font-bold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-              ارتباط با تیم اجرایی
-            </h1>
-            <div className="space-y-5">
-              {/* شماره تلفن */}
-              <div className="flex items-center gap-3 group">
-                <Image
-                  src="/images/phone.png"
-                  alt="Phone Icon"
-                  width={24}
-                  height={24}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-                <p className="text-base text-gray-700 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
-                  شماره تماس: ۱۲۳۴۵۶۷۸
-                </p>
-              </div>
-              {/* ایمیل */}
-              <div className="flex items-center gap-3 group">
-                <Image
-                  src="/images/email.png"
-                  alt="Email Icon"
-                  width={24}
-                  height={24}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-                <p className="text-base text-gray-700 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
-                  designer@siratan.com
-                </p>
-              </div>
-              {/* آدرس */}
-              <div className="flex items-center gap-3 group">
-                <Image
-                  src="/images/location.png"
-                  alt="Location Icon"
-                  width={24}
-                  height={24}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-                <p className="text-base text-gray-700 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
-                  نشانی: تهران، خیابان آزادی، پلاک ۱
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* فرم تماس */}
-          <div className="flex flex-col space-y-5">
-            <div className="relative flex flex-col space-y-4">
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="نام و نام خانوادگی"
-                  className="w-full border border-gray-300 rounded-lg p-3 pr-10 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
-                />
-                <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-                  👤
+      <div className="fixed bottom-8 right-8 flex flex-col items-end gap-4 z-50">
+        {showButtons && (
+          <div className="flex flex-col gap-3">
+            {socialButtons.map((button, index) => (
+              <div
+                key={button.name}
+                className={
+                  "flex flex-row-reverse items-center gap-2 transform transition-all duration-300 ease-in-out animate-shake " +
+                  (showButtons
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 -translate-y-10")
+                }
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <a
+                  href={button.link}
+                  className={
+                    "w-12 h-12 rounded-full " +
+                    button.color +
+                    " " +
+                    button.hoverColor +
+                    " flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300 animate-shake"
+                  }
+                >
+                  <Image
+                    src={button.icon}
+                    alt={button.alt}
+                    width={32}
+                    height={32}
+                    className="object-contain w-full h-full"
+                  />
+                </a>
+                <span className="text-gray-800 text-sm font-[IRANSans] font-semibold">
+                  {button.label}
                 </span>
               </div>
-              <div className="relative">
-                <input
-                  type="email"
-                  placeholder="ایمیل"
-                  className="w-full border border-gray-300 rounded-lg p-3 pr-10 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
-                />
-                <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-                  ✉️
-                </span>
-              </div>
-              <textarea
-                placeholder="پیام شما"
-                rows={3}
-                className="w-full border border-gray-300 rounded-lg p-3 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300 resize-none"
-              ></textarea>
-            </div>
-            <button
-              onClick={handleSubmit}
-              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-[IRANSans] py-3 px-6 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
-            >
-              ارسال
-            </button>
-            {successMessage && (
-              <div className="text-green-600 font-[IRANSans] text-center bg-green-100 p-2 rounded-lg animate-fade-in">
-                {successMessage}
-              </div>
-            )}
+            ))}
           </div>
-        </div>
+        )}
+        <button
+          onClick={toggleButtons}
+          className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center shadow-lg animate-shake hover:scale-110 transition-transform duration-300"
+        >
+          <Image
+            src={showButtons ? "/images/close.png" : "/images/call.png"}
+            alt={showButtons ? "آیکون بستن" : "آیکون تماس"}
+            width={32}
+            height={32}
+            className="object-contain w-full h-full"
+          />
+        </button>
       </div>
     </div>
   );
 
   const renderMobile = () => (
-    <div className="min-h-screen bg-gradient-to-b from-purple-100 to-white flex items-center justify-center py-52 px-4">
-      <div className="flex flex-col items-center">
-        <h1 className="text-2xl font-bold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-6">
+    <div className="min-h-screen bg-gradient-to-b from-purple-100 to-white flex items-center justify-center px-4 relative py-40">
+      <div className="flex flex-col items-center w-full max-w-md">
+        <h1 className="text-3xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-6">
           تماس با ما
         </h1>
-        <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-6 flex flex-col gap-6">
-          {/* بخش اطلاعات تماس */}
-          <div className="flex flex-col space-y-14">
-            <h1 className="text-2xl font-bold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-              ارتباط با تیم اجرایی
-            </h1>
+        <div className="w-full bg-white rounded-xl shadow-lg p-6 flex flex-col gap-6">
+          <div className="flex flex-col space-y-6">
+            <h2 className="text-xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+              ارتباط با تیم اجرایی آوامین
+            </h2>
             <div className="space-y-4">
-              {/* شماره تلفن */}
               <div className="flex items-center gap-2 group">
                 <Image
-                  src="/images/phone.png"
-                  alt="Phone Icon"
-                  width={20}
-                  height={20}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300 w-7 h-7"
+                  src="/images/call2.png"
+                  alt="آیکون شماره تماس"
+                  width={24}
+                  height={24}
+                  className="object-contain group-hover:scale-110 transition-transform duration-300"
                 />
-                <p className="text-sm text-gray-700 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
+                <p className="text-base font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
                   شماره تماس: 09121277336
                 </p>
               </div>
-              {/* ایمیل */}
               <div className="flex items-center gap-2 group">
                 <Image
-                  src="/images/home.png"
-                  alt="Email Icon"
-                  width={20}
-                  height={20}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300 w-7 h-7"
+                  src="/images/email2.png"
+                  alt="آیکون ایمیل"
+                  width={24}
+                  height={24}
+                  className="object-contain group-hover:scale-110 transition-transform duration-300"
                 />
-                <p className="text-sm text-gray-700 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
+                <p className="text-base font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
                   designer@siratan.com
                 </p>
               </div>
-              {/* آدرس */}
               <div className="flex items-center gap-2 group">
                 <Image
-                  src="/images/location.png"
-                  alt="Location Icon"
-                  width={20}
-                  height={20}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300 w-7 h-7"
+                  src="/images/location2.png"
+                  alt="آیکون موقعیت مکانی"
+                  width={24}
+                  height={24}
+                  className="object-contain group-hover:scale-110 transition-transform duration-300"
                 />
-                <p className="text-sm text-gray-700 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
+                <p className="text-base font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
                   نشانی: تهران، خیابان آزادی، پلاک ۱
                 </p>
               </div>
             </div>
           </div>
 
-          {/* فرم تماس */}
           <div className="flex flex-col space-y-4">
             <div className="relative flex flex-col space-y-3">
-              <div className="relative">
+              <div className="relative group">
                 <input
                   type="text"
                   placeholder="نام و نام خانوادگی"
-                  className="w-full border border-gray-300 rounded-lg p-2 pr-8 text-right font-[IRANSans] text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
+                  className="w-full border border-gray-300 rounded-lg p-3 pr-10 text-right font-[IRANSans] text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                 />
-                <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm">
-                  👤
-                </span>
+                <Image
+                  src="/images/user1.png"
+                  alt="آیکون کاربر"
+                  width={24}
+                  height={24}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 transition-all duration-300 group-focus-within:opacity-50"
+                />
               </div>
-              <div className="relative">
+              <div className="relative group">
                 <input
                   type="email"
                   placeholder="ایمیل"
-                  className="w-full border border-gray-300 rounded-lg p-2 pr-8 text-right font-[IRANSans] text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
+                  className="w-full border border-gray-300 rounded-lg p-3 pr-10 text-right font-[IRANSans] text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                 />
-                <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm">
-                  ✉️
-                </span>
+                <Image
+                  src="/images/email3.png"
+                  alt="آیکون ایمیل فرم"
+                  width={24}
+                  height={24}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 transition-all duration-300 group-focus-within:opacity-50"
+                />
               </div>
               <textarea
                 placeholder="پیام شما"
                 rows={3}
-                className="w-full border border-gray-300 rounded-lg p-2 text-right font-[IRANSans] text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300 resize-none"
+                className="w-full border border-gray-300 rounded-lg p-3 text-right font-[IRANSans] text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300 resize-none"
               ></textarea>
             </div>
             <button
               onClick={handleSubmit}
-              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-[IRANSans] py-2 px-4 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-[IRANSans] py-2 px-4 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
             >
               ارسال
             </button>
             {successMessage && (
-              <div className="text-green-600 font-[IRANSans] text-center bg-green-100 p-1 rounded-lg animate-fade-in text-sm">
+              <div className="text-green-600 font-[IRANSans] text-center bg-green-100 p-2 rounded-lg animate-fade-in text-sm">
                 {successMessage}
               </div>
             )}
           </div>
         </div>
+
+        <div className="w-full mt-6 bg-white rounded-xl shadow-lg p-4 flex flex-col gap-4">
+          <div className="flex flex-col items-center text-center">
+            <h2 className="text-md font-extrabold text-gray-800 font-[IRANSans] mb-2">
+              نحوه ارتباط با ما
+            </h2>
+            <div className="space-y-2 text-gray-700 font-[IRANSans]">
+              <p className="text-sm font-semibold">شماره تماس: 09121277336</p>
+              <a
+                href="https://wa.me/+989121277336"
+                className="block text-blue-500 hover:text-blue-700 transition-colors text-sm"
+              >
+                واتساپ: +989121277336
+              </a>
+              <a
+                href="https://t.me/Abehbahani"
+                className="block text-sky-500 hover:text-sky-700 transition-colors text-sm"
+              >
+                تلگرام: @Abehbahani
+              </a>
+              <a
+                href="mailto:designer@siratan.com"
+                className="block text-blue-600 hover:text-blue-800 transition-colors text-sm"
+              >
+                ایمیل: designer@siratan.com
+              </a>
+            </div>
+            <p className="text-xs text-gray-600 mt-2 font-[IRANSans]">
+              با تیم آوامین در تماس باشید تا بهترین خدمات را تجربه کنید!
+            </p>
+          </div>
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.1744017143787!2d51.37417457552437!3d35.72071167257534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e013e6e229a4b%3A0x6b6b37b1f079c46b!2sAzadi%20St%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus"
+              width="100%"
+              height="150"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div className="fixed bottom-6 right-6 flex flex-col items-end gap-3 z-50">
+        {showButtons && (
+          <div className="flex flex-col gap-2">
+            {socialButtons.map((button, index) => (
+              <div
+                key={button.name}
+                className={
+                  "flex flex-row-reverse items-center gap-2 transform transition-all duration-300 ease-in-out animate-shake " +
+                  (showButtons
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 -translate-y-10")
+                }
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <a
+                  href={button.link}
+                  className={
+                    "w-10 h-10 rounded-full " +
+                    button.color +
+                    " " +
+                    button.hoverColor +
+                    " flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300 animate-shake"
+                  }
+                >
+                  <Image
+                    src={button.icon}
+                    alt={button.alt}
+                    width={28}
+                    height={28}
+                    className="object-contain w-full h-full"
+                  />
+                </a>
+                <span className="text-gray-800 text-xs font-[IRANSans] font-semibold">
+                  {button.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+        <button
+          onClick={toggleButtons}
+          className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center shadow-lg animate-shake hover:scale-110 transition-transform duration-300"
+        >
+          <Image
+            src={showButtons ? "/images/close.png" : "/images/call.png"}
+            alt={showButtons ? "آیکون بستن" : "آیکون تماس"}
+            width={28}
+            height={28}
+            className="object-contain w-full h-full"
+          />
+        </button>
       </div>
     </div>
   );
 
   return (
     <div>
-      <style>{`
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-          animation: fadeIn 0.5s ease-in-out;
-        }
-      `}</style>
+      <style>
+        {`
+          @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+            20%, 40%, 60%, 80% { transform: translateX(2px); }
+          }
+          .animate-shake {
+            animation: shake 2s infinite;
+          }
+          .animate-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+          }
+        `}
+      </style>
       {isDesktop && renderDesktop()}
       {isTablet && renderTablet()}
       {isMobile && renderMobile()}

@@ -21,58 +21,157 @@ function Footer() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const socialLinks = [
+    {
+      name: "واتساپ",
+      icon: "/images/whatsapp1.png",
+      link: "https://wa.me/+989121277336",
+      alt: "آیکون واتساپ",
+    },
+    {
+      name: "تلگرام",
+      icon: "/images/Telegram1.png",
+      link: "https://t.me/Abehbahani",
+      alt: "آیکون تلگرام",
+    },
+    {
+      name: "ایمیل",
+      icon: "/images/email1.png",
+      link: "mailto:designer@siratan.com",
+      alt: "آیکون ایمیل",
+    },
+  ];
+
   const renderDesktop = () => (
-    <div className="relative h-auto w-full font-[IRANSans] bg-white z-50 pt-16 mt-24 mb-14">
+    <div className="relative h-auto w-full font-[IRANSans] bg-white z-50 pt-16 pb-8 mt-24">
       <Container>
         <div className="grid grid-cols-4 gap-8 justify-center items-start text-center">
           <div className="flex flex-col items-center space-y-5">
-            <h1 className="font-bold">اخبار و پیشنهادهای طلایی</h1>
-            <h1 className="font-medium text-gray-400 w-48">
-              به‌روز بمانید با جدیدترین قیمت‌ها و پیشنهادهای ویژه آوامین
+            <h1 className="text-xl font-extrabold text-gray-800">
+              اشتراک در خبرنامه
             </h1>
-            <div className="flex flex-row-reverse">
-              <input className="w-32 py-1 px-4 border" placeholder="ایمیل" />
-              <button className="bg-purple-600 px-4 py-2">
-                <Image
-                  src="/images/Telegram.png"
-                  alt="telegram"
-                  width={24}
-                  height={24}
-                />
+            <p className="text-gray-500 text-sm w-48">
+              با عضویت در خبرنامه آوامین، از آخرین قیمت‌ها و پیشنهادهای ویژه طلا
+              باخبر شوید.
+            </p>
+            <div className="flex flex-row-reverse items-center gap-2">
+              <input
+                type="email"
+                placeholder="ایمیل خود را وارد کنید"
+                className="w-48 py-2 px-4 border border-gray-300 rounded-lg text-right text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+              />
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all">
+                اشتراک
               </button>
             </div>
           </div>
 
-          <div className="flex flex-col items-center space-y-5">
-            <h1 className="font-bold">حمایت از شما</h1>
-            <h1 className="font-medium text-gray-400">درباره آوامین</h1>
-            <h1 className="font-medium text-gray-400">ویژگی‌ها</h1>
-            <h1 className="font-medium text-gray-400">قیمت‌ها</h1>
-            <h1 className="font-medium text-gray-400">دانلود اپلیکیشن</h1>
-            <h1 className="font-medium text-gray-400">مشتریان ما</h1>
+          <div className="flex flex-col items-center space-y-4">
+            <h1 className="text-xl font-extrabold text-gray-800">
+              پشتیبانی و خدمات
+            </h1>
+            <a
+              href="/about"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              درباره آوامین
+            </a>
+            <a
+              href="/features"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              ویژگی‌های پلتفرم
+            </a>
+            <a
+              href="/pricing"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              قیمت‌های به‌روز
+            </a>
+            <a
+              href="/app"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              دانلود اپلیکیشن
+            </a>
+            <a
+              href="/testimonials"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              نظرات مشتریان
+            </a>
           </div>
 
-          <div className="flex flex-col items-center space-y-5">
-            <h1 className="font-bold">راهنمای خرید طلا</h1>
-            <h1 className="font-medium text-gray-400">درباره ما</h1>
-            <h1 className="font-medium text-gray-400">ویژگی‌ها</h1>
-            <h1 className="font-medium text-gray-400">قیمت‌ها</h1>
-            <h1 className="font-medium text-gray-400">دانلود اپلیکیشن</h1>
-            <h1 className="font-medium text-gray-400">مشتریان ما</h1>
+          <div className="flex flex-col items-center space-y-4">
+            <h1 className="text-xl font-extrabold text-gray-800">
+              راهنمای خرید طلا
+            </h1>
+            <a
+              href="/guide"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              نکات خرید امن
+            </a>
+            <a
+              href="/market"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              تحلیل بازار طلا
+            </a>
+            <a
+              href="/faq"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              پرسش‌های متداول
+            </a>
+            <a
+              href="/blog"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              مقالات آموزشی
+            </a>
+            <a
+              href="/support"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              پشتیبانی مشتریان
+            </a>
           </div>
 
           <div className="flex flex-col items-center space-y-5">
             <Image
               src="/images/80.png"
-              alt="logo2footer"
+              alt="لوگوی آوامین"
               width={192}
               height={48}
             />
-            <h1 className="w-60 text-gray-500">
-              آوامین، همراه شما در خرید و فروش امن طلا با بهترین قیمت‌ها و
-              پشتیبانی 24 ساعته
-            </h1>
+            <p className="text-gray-500 text-sm w-60">
+              آوامین، پلتفرم امن و مطمئن برای خرید و فروش طلا با پشتیبانی 24/7 و
+              بهترین قیمت‌های بازار.
+            </p>
+            <div className="flex gap-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.link}
+                  className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-purple-100 transition-colors"
+                >
+                  <Image
+                    src={social.icon}
+                    alt={social.alt}
+                    width={20}
+                    height={20}
+                    className="object-contain"
+                  />
+                </a>
+              ))}
+            </div>
           </div>
+        </div>
+        <div className="mt-12 pt-6 border-t border-gray-200 text-center">
+          <p className="text-gray-500 text-sm">
+            © {new Date().getFullYear()} آوامین. تمامی حقوق محفوظ است
+          </p>
         </div>
       </Container>
     </div>
@@ -85,51 +184,115 @@ function Footer() {
           <div className="flex flex-col items-center space-y-4">
             <Image
               src="/images/80.png"
-              alt="logo2footer"
+              alt="لوگوی آوامین"
               width={96}
               height={24}
             />
-            <h1 className="font-medium text-gray-400 w-48">
-              آوامین، همراه شما در خرید و فروش امن طلا با بهترین قیمت‌ها و
-              پشتیبانی 24 ساعته
+            <p className="text-gray-500 text-sm w-48">
+              آوامین، پلتفرم امن و مطمئن برای خرید و فروش طلا با پشتیبانی 24/7.
+            </p>
+            <div className="flex gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.link}
+                  className="w-7 h-7 flex items-center justify-center rounded-full bg-gray-100 hover:bg-purple-100 transition-colors"
+                >
+                  <Image
+                    src={social.icon}
+                    alt={social.alt}
+                    width={18}
+                    height={18}
+                    className="object-contain"
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center space-y-4">
+            <h1 className="text-lg font-extrabold text-gray-800">
+              راهنمای خرید طلا
             </h1>
+            <a
+              href="/guide"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              نکات خرید امن
+            </a>
+            <a
+              href="/market"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              تحلیل بازار طلا
+            </a>
+            <a
+              href="/faq"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              پرسش‌های متداول
+            </a>
+            <a
+              href="/blog"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              مقالات آموزشی
+            </a>
           </div>
 
           <div className="flex flex-col items-center space-y-4">
-            <h1 className="font-bold text-lg">راهنمای خرید طلا</h1>
-            <h1 className="font-medium text-gray-400">درباره ما</h1>
-            <h1 className="font-medium text-gray-400">ویژگی‌ها</h1>
-            <h1 className="font-medium text-gray-400">قیمت‌ها</h1>
-            <h1 className="font-medium text-gray-400">دانلود اپلیکیشن</h1>
-            <h1 className="font-medium text-gray-400">مشتریان ما</h1>
-          </div>
-
-          <div className="flex flex-col items-center space-y-4">
-            <h1 className="font-bold text-lg">حمایت از شما</h1>
-            <h1 className="font-medium text-gray-400">درباره ما</h1>
-            <h1 className="font-medium text-gray-400">ویژگی‌ها</h1>
-            <h1 className="font-medium text-gray-400">قیمت‌ها</h1>
-            <h1 className="font-medium text-gray-400">دانلود اپلیکیشن</h1>
-            <h1 className="font-medium text-gray-400">مشتریان ما</h1>
-          </div>
-
-          <div className="flex flex-col items-center space-y-4">
-            <h1 className="font-bold text-lg">اخبار و پیشنهادهای طلایی</h1>
-            <h1 className="font-medium text-gray-400 w-48">
-              به‌روز بمانید با جدیدترین قیمت‌ها و پیشنهادهای ویژه آوامین
+            <h1 className="text-lg font-extrabold text-gray-800">
+              پشتیبانی و خدمات
             </h1>
-            <div className="flex flex-row-reverse items-center space-x-2">
-              <input className="w-28 py-1 px-4 border" placeholder="ایمیل" />
-              <button className="bg-purple-600 px-4 py-2">
-                <Image
-                  src="/images/Telegram.png"
-                  alt="telegram"
-                  width={24}
-                  height={24}
-                />
+            <a
+              href="/about"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              درباره آوامین
+            </a>
+            <a
+              href="/features"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              ویژگی‌های پلتفرم
+            </a>
+            <a
+              href="/pricing"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              قیمت‌های به‌روز
+            </a>
+            <a
+              href="/app"
+              className="text-gray-500 hover:text-purple-600 transition-colors text-sm"
+            >
+              دانلود اپلیکیشن
+            </a>
+          </div>
+
+          <div className="flex flex-col items-center space-y-4">
+            <h1 className="text-lg font-extrabold text-gray-800">
+              اشتراک در خبرنامه
+            </h1>
+            <p className="text-gray-500 text-sm w-48">
+              از آخرین قیمت‌ها و پیشنهادهای ویژه طلا باخبر شوید.
+            </p>
+            <div className="flex flex-row-reverse items-center gap-2">
+              <input
+                type="email"
+                placeholder="ایمیل خود را وارد کنید"
+                className="w-36 py-2 px-4 border border-gray-300 rounded-lg text-right text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+              />
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all">
+                اشتراک
               </button>
             </div>
           </div>
+        </div>
+        <div className="mt-8 pt-4 border-t border-gray-200 text-center">
+          <p className="text-gray-500 text-sm">
+            © {new Date().getFullYear()} آوامین. تمامی حقوق محفوظ است.
+          </p>
         </div>
       </Container>
     </div>
@@ -142,53 +305,127 @@ function Footer() {
           <div className="flex flex-col items-end text-right w-full space-y-3">
             <Image
               src="/images/80.png"
-              alt="logo2footer"
+              alt="لوگوی آوامین"
               width={80}
               height={20}
             />
-            <h1 className="text-[16px] text-right text-gray-500 w-full">
-              آوامین، همراه شما در خرید و فروش امن طلا با بهترین قیمت‌ها و
-              پشتیبانی 24 ساعته
-            </h1>
-          </div>
-
-          <div className="grid grid-cols-2 gap-8 items-center text-right">
-            <div className="space-y-2">
-              <h1 className="font-bold text-base">راهنمای خرید طلا</h1>
-              <h1 className="font-medium text-gray-400">درباره ما</h1>
-              <h1 className="font-medium text-gray-400">ویژگی‌ها</h1>
-              <h1 className="font-medium text-gray-400">قیمت‌ها</h1>
-              <h1 className="font-medium text-gray-400">دانلود اپلیکیشن</h1>
-              <h1 className="font-medium text-gray-400">مشتریان ما</h1>
-            </div>
-
-            <div className="space-y-2">
-              <h1 className="font-bold text-base">حمایت از شما</h1>
-              <h1 className="font-medium text-gray-400">درباره ما</h1>
-              <h1 className="font-medium text-gray-400">ویژگی‌ها</h1>
-              <h1 className="font-medium text-gray-400">قیمت‌ها</h1>
-              <h1 className="font-medium text-gray-400">دانلود اپلیکیشن</h1>
-              <h1 className="font-medium text-gray-400">مشتریان ما</h1>
+            <p className="text-gray-500 text-sm w-full">
+              آوامین، پلتفرم امن برای خرید و فروش طلا با پشتیبانی 24/7.
+            </p>
+            <div className="flex gap-3 justify-end">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.link}
+                  className="w-6 h-6 flex items-center justify-center rounded-full bg-gray-100 hover:bg-purple-100 transition-colors"
+                >
+                  <Image
+                    src={social.icon}
+                    alt={social.alt}
+                    width={16}
+                    height={16}
+                    className="object-contain"
+                  />
+                </a>
+              ))}
             </div>
           </div>
 
-          <div className="flex flex-col w-full items-end px-3 space-y-6">
-            <h1 className="font-bold text-right">اخبار و پیشنهادهای طلایی</h1>
-            <h1 className="font-medium text-gray-500 w-full text-right">
-              به‌روز بمانید با جدیدترین قیمت‌ها و پیشنهادهای ویژه آوامین
+          <div className="grid grid-cols-2 gap-6 items-start text-right">
+            <div className="space-y-2">
+              <h1 className="text-base font-extrabold text-gray-800">
+                راهنمای خرید
+              </h1>
+              <a
+                href="/guide"
+                className="block text-gray-500 hover:text-purple-600 transition-colors text-sm"
+              >
+                نکات خرید امن
+              </a>
+              <a
+                href="/market"
+                className="block text-gray-500 hover:text-purple-600 transition-colors text-sm"
+              >
+                تحلیل بازار
+              </a>
+              <a
+                href="/faq"
+                className="block text-gray-500 hover:text-purple-600 transition-colors text-sm"
+              >
+                پرسش‌های متداول
+              </a>
+            </div>
+
+            <div className="space-y-2">
+              <h1 className="text-base font-extrabold text-gray-800">
+                پشتیبانی
+              </h1>
+              <a
+                href="/about"
+                className="block text-gray-500 hover:text-purple-600 transition-colors text-sm"
+              >
+                درباره ما
+              </a>
+              <a
+                href="/features"
+                className="block text-gray-500 hover:text-purple-600 transition-colors text-sm"
+              >
+                ویژگی‌ها
+              </a>
+              <a
+                href="/app"
+                className="block text-gray-500 hover:text-purple-600 transition-colors text-sm"
+              >
+                اپلیکیشن
+              </a>
+            </div>
+          </div>
+
+          <div className="flex flex-col w-full items-end space-y-4 text-right">
+            <h1 className="text-base font-extrabold text-gray-800">
+              تماس با ما
             </h1>
-            <div className="flex flex-row-reverse w-full items-center">
-              <input className="w-full h-10 px-4 border" placeholder="ایمیل" />
-              <button className="bg-purple-600 px-4 h-10">
-                <Image
-                  src="/images/Telegram.png"
-                  alt="telegram"
-                  width={16}
-                  height={16}
-                />
+            <p className="text-gray-500 text-sm">
+              شماره تماس:{" "}
+              <a href="tel:+989121277336" className="hover:text-purple-600">
+                09121277336
+              </a>
+            </p>
+            <p className="text-gray-500 text-sm">
+              ایمیل:{" "}
+              <a
+                href="mailto:designer@siratan.com"
+                className="hover:text-purple-600"
+              >
+                designer@siratan.com
+              </a>
+            </p>
+            <p className="text-gray-500 text-sm">
+              آدرس: تهران، خیابان آزادی، پلاک ۱
+            </p>
+          </div>
+
+          <div className="flex flex-col w-full items-end space-y-4 text-right">
+            <h1 className="text-base font-extrabold text-gray-800">خبرنامه</h1>
+            <p className="text-gray-500 text-sm w-full">
+              از پیشنهادهای ویژه و قیمت‌های به‌روز باخبر شوید.
+            </p>
+            <div className="flex flex-row-reverse w-full items-center gap-2">
+              <input
+                type="email"
+                placeholder="ایمیل خود را وارد کنید"
+                className="w-full h-10 px-4 border border-gray-300 rounded-lg text-right text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+              />
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 h-10 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all">
+                اشتراک
               </button>
             </div>
           </div>
+        </div>
+        <div className="mt-8 pt-4 border-t border-gray-200 text-center">
+          <p className="text-gray-500 text-sm">
+            © {new Date().getFullYear()} آوامین. تمامی حقوق محفوظ است
+          </p>
         </div>
       </Container>
     </div>

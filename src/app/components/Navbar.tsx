@@ -54,14 +54,8 @@ function Navbar() {
               تماس با ما
               <span className="absolute bottom-0 right-0 w-0 h-0.5 bg-purple-500 transition-all duration-500 group-hover:w-full"></span>
             </Link>
-            <Link href="#" className="font-iransans relative group pb-1">
-              صفحات
-              <span className="absolute bottom-0 right-0 w-0 h-0.5 bg-purple-500 transition-all duration-500 group-hover:w-full"></span>
-            </Link>
-            <Link href="/price" className="font-iransans relative group pb-1">
-              قیمت
-              <span className="absolute bottom-0 right-0 w-0 h-0.5 bg-purple-500 transition-all duration-500 group-hover:w-full"></span>
-            </Link>
+           
+           
             <Link
               href="/solutions"
               className="font-iransans relative group pb-1"
@@ -116,20 +110,7 @@ function Navbar() {
             >
               تماس با ما
             </Link>
-            <Link
-              href="#"
-              onClick={() => setIsOpen(false)}
-              className="text-black"
-            >
-              صفحات
-            </Link>
-            <Link
-              href="/price"
-              onClick={() => setIsOpen(false)}
-              className="text-black"
-            >
-              قیمت
-            </Link>
+
             <Link
               href="/solutions"
               onClick={() => setIsOpen(false)}

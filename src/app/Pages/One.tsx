@@ -51,7 +51,7 @@ function One() {
     },
     {
       name: "whatsapp",
-      icon: "/images/whatsapp.png",
+      icon: "/images/whatsapp1.png",
       color: "white",
       hoverColor: "hover:bg-green-600",
       link: "https://wa.me/+989121277336",

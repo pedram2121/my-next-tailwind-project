@@ -2,8 +2,6 @@
 import React from "react";
 import { useResponsive } from "../components/ResponsiveContext";
 import available from "../../../public/images/available-app.png";
-import appbtn2 from "../../../public/images/app_btn2.png";
-import appbtn1 from "../../../public/images/app_btn1.png";
 import Image from "next/image";
 
 // CSS for the pulsing animation
@@ -22,15 +20,11 @@ const DesktopView: React.FC = () => {
   const imgContainerStyles = "flex justify-center w-[430px] pr-8";
   const textContainerStyles =
     "flex flex-col items-center space-y-6 w-1/2 text-right pr-8 font-[IRANSans] text-justify-last-right";
-  const buttonContainerStyles =
-    "flex justify-end space-x-4 mt-4 font-[IRANSans] text-justify-last-right";
   const deviceStyles = "w-full max-w-[600px]";
   const textSize = "text-4xl font-[IRANSans]";
   const paragraphSize = "text-lg";
-  const buttonSize = "h-12";
 
   return (
-    
     <div className={containerStyles}>
       <style>{pulseAnimation}</style>
       <div className="relative">
@@ -64,36 +58,6 @@ const DesktopView: React.FC = () => {
           کنید. بیش از ۸۰٪ کاربران از موبایل استفاده می‌کنند، پس اپلیکیشن ما
           همیشه همراه شماست
         </p>
-        <div className={buttonContainerStyles}>
-          <a
-            href="https://play.google.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download from Google Play"
-          >
-            <Image
-              src={appbtn2.src}
-              alt="Get it on Google Play"
-              className={`${buttonSize} hover:opacity-80 transition-opacity`}
-              width={150}
-              height={50}
-            />
-          </a>
-          <a
-            href="https://www.apple.com/app-store/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download on the App Store"
-          >
-            <Image
-              src={appbtn1.src}
-              alt="Download on the App Store"
-              className={`${buttonSize} hover:opacity-80 transition-opacity`}
-              width={150}
-              height={50}
-            />
-          </a>
-        </div>
       </div>
     </div>
   );
@@ -106,11 +70,9 @@ const TabletView: React.FC = () => {
   const imgContainerStyles = "flex justify-center w-1/2 pr-4";
   const textContainerStyles =
     "flex flex-col items-center space-y-6 w-1/2 text-right pr-8";
-  const buttonContainerStyles = "flex justify-end space-x-4 mt-4";
   const deviceStyles = "w-full max-w-[450px]";
   const textSize = "text-3xl";
   const paragraphSize = "text-base";
-  const buttonSize = "h-12";
 
   return (
     <div className={containerStyles}>
@@ -146,36 +108,6 @@ const TabletView: React.FC = () => {
           کنید. بیش از ۸۰٪ کاربران از موبایل استفاده می‌کنند، پس اپلیکیشن ما
           همیشه همراه شماست!
         </p>
-        <div className={buttonContainerStyles}>
-          <a
-            href="https://play.google.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download from Google Play"
-          >
-            <Image
-              src={appbtn2.src}
-              alt="Get it on Google Play"
-              className={`${buttonSize} hover:opacity-80 transition-opacity`}
-              width={150}
-              height={50}
-            />
-          </a>
-          <a
-            href="https://www.apple.com/app-store/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download on the App Store"
-          >
-            <Image
-              src={appbtn1.src}
-              alt="Download on the App Store"
-              className={`${buttonSize} hover:opacity-80 transition-opacity`}
-              width={150}
-              height={50}
-            />
-          </a>
-        </div>
       </div>
     </div>
   );
@@ -185,14 +117,12 @@ const TabletView: React.FC = () => {
 const MobileView: React.FC = () => {
   const containerStyles =
     "flex flex-col items-center justify-center min-h-[600px] bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-10 relative overflow-hidden";
-  const imgContainerStyles = "flex justify-center w-full";
+  const imgContainerStyles = "flex justify-center w-full mb-6";
   const textContainerStyles =
-    "flex flex-col items-center space-y-6 w-full text-center";
-  const buttonContainerStyles = "flex justify-center space-x-3 mt-4";
-  const deviceStyles = "w-2/4 top-[150px] left-24";
+    "flex flex-col items-center space-y-6 w-full text-center font-[IRANSans]";
+  const deviceStyles = "w-3/4";
   const textSize = "text-2xl";
   const paragraphSize = "text-sm";
-  const buttonSize = "h-14";
 
   return (
     <div className={containerStyles}>
@@ -211,58 +141,23 @@ const MobileView: React.FC = () => {
           className="object-contain"
         />
       </div>
-      <div className={`${imgContainerStyles} relative w-full top-[15px]`}>
+      <div className={`${imgContainerStyles} relative w-full`}>
         <Image
           src={available.src}
           alt="App personally crafted for you"
-          className={`object-contain absolute ${deviceStyles}`}
+          className={`object-contain ${deviceStyles}`}
           width={300}
           height={300}
         />
       </div>
-      <div className={`textContainerStyles relative`}>
-        <div className="absolute -top-40 left-56 px-6 w-full">
-          <h1 className={` absolute font-bold font-[IRANSans] w-full leading-tight right-[150px] ${textSize}`}>
-            حالا آوامین را دانلود کنید
-          </h1>
-        </div>
-        <p
-          className={`absolute -top-24 left-0 leading-relaxed max-w-md
-           text-justify-last-right font-[IRANSans] w-full ${paragraphSize}`}
-        >
+      <div className={textContainerStyles}>
+        <h1 className={`font-bold font-[IRANSans] leading-tight ${textSize}`}>
+          حالا آوامین را دانلود کنید
+        </h1>
+        <p className={`leading-relaxed max-w-md ${paragraphSize}`}>
           با آوامین، قیمت طلا را لحظه‌ای دنبال کنید و معاملات خود را با امنیت
           بالا انجام دهید. اپلیکیشن ما برای راحتی شما در هر زمان در دسترسه!
         </p>
-        <div className={buttonContainerStyles}>
-          <a
-            href="https://play.google.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download from Google Play"
-          >
-            <Image
-              src={appbtn2.src}
-              alt="Get it on Google Play"
-              className={`${buttonSize} hover:opacity-80 transition-opacity mt-10`}
-              width={150}
-              height={50}
-            />
-          </a>
-          <a
-            href="https://www.apple.com/app-store/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download on the App Store"
-          >
-            <Image
-              src={appbtn1.src}
-              alt="Download on the App Store"
-              className={`${buttonSize} hover:opacity-80 transition-opacity mt-10`}
-              width={150}
-              height={50}
-            />
-          </a>
-        </div>
       </div>
     </div>
   );

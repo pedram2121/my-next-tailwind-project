@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { useResponsive } from "../components/ResponsiveContext";
+import Link from "next/link";
 
 function Eighth() {
   const { isMobile, isTablet, isDesktop } = useResponsive();
@@ -44,9 +45,12 @@ function Eighth() {
               priority
             />
           </div>
-          <button className="bg-pink-500 px-8 py-3 rounded-3xl text-white text-base hover:bg-pink-600 transition font-[IRANSans]">
+          <Link
+            href="/contact"
+            className="bg-pink-500 px-8 py-3 rounded-3xl text-white text-base hover:bg-pink-600 transition font-[IRANSans] inline-block"
+          >
             تماس با ما
-          </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -88,9 +92,12 @@ function Eighth() {
               priority
             />
           </div>
-          <button className="bg-pink-500 px-8 py-3 rounded-3xl text-white text-base hover:bg-pink-600 transition">
+          <Link
+            href="/contact"
+            className="bg-pink-500 px-8 py-3 rounded-3xl text-white text-base hover:bg-pink-600 transition inline-block"
+          >
             تماس با ما
-          </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -103,17 +110,17 @@ function Eighth() {
         <div className="text-right font-bold text-2xl space-y-3">
           <h1>پشتیبانی آوامین در کنارتان</h1>
           <h1>با ما در تماس باشید</h1>
-          <h1> همیشه کنار شما هستیم </h1>
+          <h1>همیشه کنار شما هستیم</h1>
         </div>
 
         {/* بخش تصویر و دکمه */}
         <div className="relative w-full flex flex-col items-center mb-20">
-          <button
-            className="bg-pink-500 px-6 py-2 rounded-3xl
-           text-white text-sm hover:bg-pink-600 transition absolute right-44"
+          <Link
+            href="/contact"
+            className="bg-pink-500 px-6 py-2 rounded-3xl text-white text-sm hover:bg-pink-600 transition absolute right-44"
           >
             تماس با ما
-          </button>
+          </Link>
         </div>
       </div>
     </div>
