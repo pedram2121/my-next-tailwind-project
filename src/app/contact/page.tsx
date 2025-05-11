@@ -72,11 +72,11 @@ function Contact() {
   const renderDesktop = () => (
     <div className="min-h-screen w-full bg-gradient-to-b from-purple-100 to-white flex items-center justify-center py-20 px-8 relative">
       <div className="flex flex-col items-center w-3/5 h-auto py-40">
-        <div className="flex items-center gap-3 pb-20">
-          <h1 className="text-5xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+        <div className="flex items-center gap-3 pb-24">
+          <h1 className="text-5xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent py-10">
             تماس با ما
           </h1>
-          <span className="text-3xl font-bold text-gray-500">contactus</span>
+          <span className="text-3xl font-bold text-gray-500"></span>
         </div>
 
         <div className="w-full bg-white rounded-xl shadow-lg p-8 flex flex-row gap-12">
@@ -111,7 +111,7 @@ function Contact() {
                   className="object-contain group-hover:scale-110 transition-transform duration-300 w-11 h-11"
                 />
                 <p className="text-xl font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
-                  designer@siratan.com
+                  avaminonline@gmail.com
                 </p>
               </div>
 
@@ -217,18 +217,19 @@ function Contact() {
                 href="mailto:designer@siratan.com"
                 className="inline-block text-blue-600 hover:text-blue-800 transition-colors text-base"
               >
-                ایمیل: designer@siratan.com
+                ایمیل: avaminonline@gmail.com
               </a>
             </div>
             <p className="text-sm text-gray-600 mt-4 font-[IRANSans]">
               با تیم آوامین در تماس باشید تا بهترین خدمات را تجربه کنید
             </p>
           </div>
-          <div className="flex flex-col items-center text-center space-y-2">
-            <p className="text-lg font-semibold text-gray-800 font-[IRANSans] text-right leading-relaxed text-justify-last-right">
+          <div className="flex flex-col items-center text-center space-y-4">
+            <p className="text-lg font-semibold text-gray-600 font-[IRANSans] text-[15px] leading-[37px] mt-3
+             text-justify-last-right ">
               تیم پشتیبانی آوامین آماده پاسخگویی به شماست! در هر ساعت از
               شبانه‌روز می‌توانید از طریق شماره تماس 09121277336 (پشتیبانی در
-              واتساپ و تلگرام) یا ایمیل designer@siratan.com با ما در ارتباط
+              واتساپ و تلگرام) یا ایمیل avaminonline@gmail.com با ما در ارتباط
               باشید. ما هفت روز هفته، به‌صورت ۲۴ ساعته در کنار شما هستیم تا
               تجربه‌ای بی‌نظیر از خدمات داشته باشید
             </p>
@@ -545,7 +546,7 @@ function Contact() {
                   className="object-contain group-hover:scale-110 transition-transform duration-300"
                 />
                 <p className="text-base font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
-                  designer@siratan.com
+                  avaminonline@gmail.com
                 </p>
               </div>
               <div className="flex items-center gap-2 group">
@@ -647,7 +648,7 @@ function Contact() {
                 href="mailto:designer@siratan.com"
                 className="inline-block text-blue-600 hover:text-blue-800 transition-colors text-sm"
               >
-                ایمیل: designer@siratan.com
+                ایمیل: avaminonline@gmail.com
               </a>
             </div>
             <p className="text-xs text-gray-600 mt-2 font-[IRANSans]">
@@ -658,7 +659,7 @@ function Contact() {
             <p className="text-base font-semibold text-gray-800 font-[IRANSans] text-[12px] leading-relaxed text-justify-last-right">
               تیم پشتیبانی آوامین آماده پاسخگویی به شماست! در هر ساعت از
               شبانه‌روز می‌توانید از طریق شماره تماس 09121277336 (پشتیبانی در
-              واتساپ و تلگرام) یا ایمیل designer@siratan.com با ما در ارتباط
+              واتساپ و تلگرام) یا ایمیل avaminonline@gmail.com با ما در ارتباط
               باشید. ما هفت روز هفته، به‌صورت ۲۴ ساعته در کنار شما هستیم تا
               تجربه‌ای بی‌نظیر از خدمات داشته باشید
             </p>
