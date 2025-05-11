@@ -6,11 +6,24 @@ import Image from "next/image";
 function Contact() {
   const { isMobile, isTablet, isDesktop } = useResponsive();
   const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [showButtons, setShowButtons] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = () => {
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      setErrorMessage("لطفاً تمام فیلدها (نام، ایمیل و پیام) را پر کنید.");
+      setTimeout(() => setErrorMessage(""), 3000);
+      return;
+    }
+    setErrorMessage("");
     setSuccessMessage("پیام شما با موفقیت ارسال شد!");
     setTimeout(() => setSuccessMessage(""), 3000);
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   const toggleButtons = () => {
@@ -40,7 +53,7 @@ function Contact() {
       name: "تلگرام",
       icon: "/images/Telegram1.png",
       color: "bg-sky-500",
-      hoverColor: "hover:bg-sky-600",
+      hoverColor: "hover:bg-sky-700",
       link: "https://t.me/Abehbahani",
       label: "تلگرام",
       alt: "آیکون تلگرام",
@@ -59,15 +72,21 @@ function Contact() {
   const renderDesktop = () => (
     <div className="min-h-screen w-full bg-gradient-to-b from-purple-100 to-white flex items-center justify-center py-20 px-8 relative">
       <div className="flex flex-col items-center w-3/5 h-auto py-40">
-        <h1 className="text-5xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent pb-20">
-          تماس با ما
-        </h1>
+        <div className="flex items-center gap-3 pb-20">
+          <h1 className="text-5xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+            تماس با ما
+          </h1>
+          <span className="text-3xl font-bold text-gray-500">contactus</span>
+        </div>
 
         <div className="w-full bg-white rounded-xl shadow-lg p-8 flex flex-row gap-12">
           <div className="w-full flex flex-col space-y-8">
-            <h1 className="text-3xl font-extrabold font-[IRANSans] mb-20 text-left bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-              ارتباط با تیم اجرایی آوامین
-            </h1>
+            <div className="flex items-center gap-3 mb-20">
+              <h1 className="text-3xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+                ارتباط با تیم اجرایی آوامین
+              </h1>
+              <span className="text-xl font-bold text-gray-500"></span>
+            </div>
 
             <div className="space-y-6">
               <div className="flex items-center gap-4 group">
@@ -117,6 +136,8 @@ function Contact() {
                 <input
                   type="text"
                   placeholder="نام و نام خانوادگی"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="w-full border border-gray-300 pr-16 rounded-lg p-3 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                 />
                 <Image
@@ -132,6 +153,8 @@ function Contact() {
                 <input
                   type="email"
                   placeholder="ایمیل"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full border border-gray-300 pr-16 rounded-lg p-3 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                 />
                 <Image
@@ -146,6 +169,8 @@ function Contact() {
               <textarea
                 placeholder="پیام شما"
                 rows={4}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className="w-full border border-gray-300 rounded-lg p-3 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300 resize-none"
               ></textarea>
             </div>
@@ -161,6 +186,11 @@ function Contact() {
                 {successMessage}
               </div>
             )}
+            {errorMessage && (
+              <div className="text-red-600 font-[IRANSans] text-center bg-red-100 p-2 rounded-lg animate-fade-in">
+                {errorMessage}
+              </div>
+            )}
           </div>
         </div>
 
@@ -169,23 +199,23 @@ function Contact() {
             <h2 className="text-xl font-extrabold text-gray-800 font-[IRANSans] mb-4">
               نحوه ارتباط با ما
             </h2>
-            <div className="space-y-3 text-gray-700 font-[IRANSans]">
+            <div className="space-y-2 text-gray-600 font-[IRANSans] text-[15px]">
               <p className="text-base font-semibold">شماره تماس: 09121277336</p>
               <a
                 href="https://wa.me/+989121277336"
-                className="block text-blue-500 hover:text-blue-700 transition-colors"
+                className="inline-block text-blue-500 hover:text-blue-700 transition-colors text-base mr-4"
               >
-                واتساپ: 00989121277336
+                واتساپ: +989121277336
               </a>
               <a
                 href="https://t.me/Abehbahani"
-                className="block text-sky-500 hover:text-sky-700 transition-colors"
+                className="inline-block text-sky-500 hover:text-sky-700 transition-colors text-base mr-4"
               >
                 تلگرام: @Abehbahani
               </a>
               <a
                 href="mailto:designer@siratan.com"
-                className="block text-blue-600 hover:text-blue-800 transition-colors"
+                className="inline-block text-blue-600 hover:text-blue-800 transition-colors text-base"
               >
                 ایمیل: designer@siratan.com
               </a>
@@ -194,16 +224,14 @@ function Contact() {
               با تیم آوامین در تماس باشید تا بهترین خدمات را تجربه کنید
             </p>
           </div>
-          <div>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.1744017143787!2d51.37417457552437!3d35.72071167257534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e013e6e229a4b%3A0x6b6b37b1f079c46b!2sAzadi%20St%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus"
-              width="100%"
-              height="250"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <div className="flex flex-col items-center text-center space-y-2">
+            <p className="text-lg font-semibold text-gray-800 font-[IRANSans] text-right leading-relaxed text-justify-last-right">
+              تیم پشتیبانی آوامین آماده پاسخگویی به شماست! در هر ساعت از
+              شبانه‌روز می‌توانید از طریق شماره تماس 09121277336 (پشتیبانی در
+              واتساپ و تلگرام) یا ایمیل designer@siratan.com با ما در ارتباط
+              باشید. ما هفت روز هفته، به‌صورت ۲۴ ساعته در کنار شما هستیم تا
+              تجربه‌ای بی‌نظیر از خدمات داشته باشید
+            </p>
           </div>
         </div>
       </div>
@@ -266,14 +294,20 @@ function Contact() {
   const renderTablet = () => (
     <div className="min-h-screen bg-gradient-to-b from-purple-100 to-white flex items-center justify-center py-12 px-6 relative">
       <div className="flex flex-col items-center w-full max-w-4xl">
-        <h1 className="text-4xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-8">
-          تماس با ما
-        </h1>
+        <div className="flex items-center gap-3 mb-8">
+          <h1 className="text-4xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+            تماس با ما
+          </h1>
+          <span className="text-2xl font-bold text-gray-500">contactus</span>
+        </div>
         <div className="w-full bg-white rounded-xl shadow-lg p-8 flex flex-col gap-8">
           <div className="flex flex-col space-y-6">
-            <h2 className="text-2xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-              ارتباط با تیم اجرایی آوامین
-            </h2>
+            <div className="flex items-center gap-3">
+              <h2 className="text-2xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+                ارتباط با تیم اجرایی آوامین
+              </h2>
+              <span className="text-lg font-bold text-gray-500">contactus</span>
+            </div>
             <div className="space-y-5">
               <div className="flex items-center gap-3 group">
                 <Image
@@ -320,6 +354,8 @@ function Contact() {
                 <input
                   type="text"
                   placeholder="نام و نام خانوادگی"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="w-full border border-gray-300 rounded-lg p-3 pr-12 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                 />
                 <Image
@@ -334,6 +370,8 @@ function Contact() {
                 <input
                   type="email"
                   placeholder="ایمیل"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full border border-gray-300 rounded-lg p-3 pr-12 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                 />
                 <Image
@@ -347,6 +385,8 @@ function Contact() {
               <textarea
                 placeholder="پیام شما"
                 rows={4}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className="w-full border border-gray-300 rounded-lg p-3 text-right font-[IRANSans] text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300 resize-none"
               ></textarea>
             </div>
@@ -361,6 +401,11 @@ function Contact() {
                 {successMessage}
               </div>
             )}
+            {errorMessage && (
+              <div className="text-red-600 font-[IRANSans] text-center bg-red-100 p-2 rounded-lg animate-fade-in">
+                {errorMessage}
+              </div>
+            )}
           </div>
         </div>
 
@@ -373,19 +418,19 @@ function Contact() {
               <p className="text-base font-semibold">شماره تماس: 09121277336</p>
               <a
                 href="https://wa.me/+989121277336"
-                className="block text-blue-500 hover:text-blue-700 transition-colors"
+                className="inline-block text-blue-500 hover:text-blue-700 transition-colors text-base mr-4"
               >
                 واتساپ: +989121277336
               </a>
               <a
                 href="https://t.me/Abehbahani"
-                className="block text-sky-500 hover:text-sky-700 transition-colors"
+                className="inline-block text-sky-500 hover:text-sky-700 transition-colors text-base mr-4"
               >
                 تلگرام: @Abehbahani
               </a>
               <a
                 href="mailto:designer@siratan.com"
-                className="block text-blue-600 hover:text-blue-800 transition-colors"
+                className="inline-block text-blue-600 hover:text-blue-800 transition-colors text-base"
               >
                 ایمیل: designer@siratan.com
               </a>
@@ -394,16 +439,14 @@ function Contact() {
               با تیم آوامین در تماس باشید تا بهترین خدمات را تجربه کنید!
             </p>
           </div>
-          <div>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.1744017143787!2d51.37417457552437!3d35.72071167257534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e013e6e229a4b%3A0x6b6b37b1f079c46b!2sAzadi%20St%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus"
-              width="100%"
-              height="200"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <div className="flex flex-col items-center text-center space-y-2">
+            <p className="text-lg font-semibold text-gray-800 font-[IRANSans] text-right leading-relaxed">
+              تیم پشتیبانی آوامین آماده پاسخگویی به شماست! در هر ساعت از
+              شبانه‌روز می‌توانید از طریق شماره تماس 09121277336 (پشتیبانی در
+              واتساپ و تلگرام) یا ایمیل designer@siratan.com با ما در ارتباط
+              باشید. ما هفت روز هفته، به‌صورت ۲۴ ساعته در کنار شما هستیم تا
+              تجربه‌ای بی‌نظیر از خدمات داشته باشید
+            </p>
           </div>
         </div>
       </div>
@@ -466,14 +509,20 @@ function Contact() {
   const renderMobile = () => (
     <div className="min-h-screen bg-gradient-to-b from-purple-100 to-white flex items-center justify-center px-4 relative py-40">
       <div className="flex flex-col items-center w-full max-w-md">
-        <h1 className="text-3xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-6">
-          تماس با ما
-        </h1>
+        <div className="flex items-center gap-2 mb-6">
+          <h1 className="text-3xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+            تماس با ما
+          </h1>
+          <span className="text-xl font-bold text-gray-500">contactus</span>
+        </div>
         <div className="w-full bg-white rounded-xl shadow-lg p-6 flex flex-col gap-6">
           <div className="flex flex-col space-y-6">
-            <h2 className="text-xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-              ارتباط با تیم اجرایی آوامین
-            </h2>
+            <div className="flex items-center gap-2">
+              <h2 className="text-xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+                ارتباط با تیم اجرایی آوامین
+              </h2>
+              <span className="text-lg font-bold text-gray-500"></span>
+            </div>
             <div className="space-y-4">
               <div className="flex items-center gap-2 group">
                 <Image
@@ -520,6 +569,8 @@ function Contact() {
                 <input
                   type="text"
                   placeholder="نام و نام خانوادگی"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="w-full border border-gray-300 rounded-lg p-3 pr-10 text-right font-[IRANSans] text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                 />
                 <Image
@@ -534,6 +585,8 @@ function Contact() {
                 <input
                   type="email"
                   placeholder="ایمیل"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full border border-gray-300 rounded-lg p-3 pr-10 text-right font-[IRANSans] text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                 />
                 <Image
@@ -547,6 +600,8 @@ function Contact() {
               <textarea
                 placeholder="پیام شما"
                 rows={3}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className="w-full border border-gray-300 rounded-lg p-3 text-right font-[IRANSans] text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300 resize-none"
               ></textarea>
             </div>
@@ -561,6 +616,11 @@ function Contact() {
                 {successMessage}
               </div>
             )}
+            {errorMessage && (
+              <div className="text-red-600 font-[IRANSans] text-center bg-red-100 p-2 rounded-lg animate-fade-in text-sm">
+                {errorMessage}
+              </div>
+            )}
           </div>
         </div>
 
@@ -573,19 +633,19 @@ function Contact() {
               <p className="text-sm font-semibold">شماره تماس: 09121277336</p>
               <a
                 href="https://wa.me/+989121277336"
-                className="block text-blue-500 hover:text-blue-700 transition-colors text-sm"
+                className="inline-block text-blue-500 hover:text-blue-700 transition-colors text-sm mr-4"
               >
                 واتساپ: +989121277336
               </a>
               <a
                 href="https://t.me/Abehbahani"
-                className="block text-sky-500 hover:text-sky-700 transition-colors text-sm"
+                className="inline-block text-sky-500 hover:text-sky-700 transition-colors text-sm mr-4"
               >
                 تلگرام: @Abehbahani
               </a>
               <a
                 href="mailto:designer@siratan.com"
-                className="block text-blue-600 hover:text-blue-800 transition-colors text-sm"
+                className="inline-block text-blue-600 hover:text-blue-800 transition-colors text-sm"
               >
                 ایمیل: designer@siratan.com
               </a>
@@ -594,21 +654,19 @@ function Contact() {
               با تیم آوامین در تماس باشید تا بهترین خدمات را تجربه کنید!
             </p>
           </div>
-          <div>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.1744017143787!2d51.37417457552437!3d35.72071167257534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e013e6e229a4b%3A0x6b6b37b1f079c46b!2sAzadi%20St%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus"
-              width="100%"
-              height="150"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <div className="flex flex-col items-center text-center space-y-2">
+            <p className="text-base font-semibold text-gray-800 font-[IRANSans] text-[12px] leading-relaxed text-justify-last-right">
+              تیم پشتیبانی آوامین آماده پاسخگویی به شماست! در هر ساعت از
+              شبانه‌روز می‌توانید از طریق شماره تماس 09121277336 (پشتیبانی در
+              واتساپ و تلگرام) یا ایمیل designer@siratan.com با ما در ارتباط
+              باشید. ما هفت روز هفته، به‌صورت ۲۴ ساعته در کنار شما هستیم تا
+              تجربه‌ای بی‌نظیر از خدمات داشته باشید
+            </p>
           </div>
         </div>
       </div>
 
-      <div className="fixed bottom-6 right-6 flex flex-col items-end gap-3 z-50">
+      <div className="fixed bottom-6 right-6 flex flex-col items-end gap-3 z-100">
         {showButtons && (
           <div className="flex flex-col gap-2">
             {socialButtons.map((button, index) => (
