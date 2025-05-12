@@ -141,15 +141,15 @@ const Sixth: React.FC<SixthProps> = ({
               <SwiperSlide
                 key={index}
                 className={`swiper-slide-custom ${cardClass} bg-white p-6 rounded-lg shadow-md flex
-                 flex-col justify-between transition-all duration-300 cursor-pointer relative pb-20`}
+                 flex-col border border-gray-200 justify-between transition-all duration-300 cursor-pointer relative pb-20`}
               >
-                <div className="flex flex-row-reverse items-center mb-6">
+                <div className="flex items-center mb-6 -mr-5">
                   <Image
                     src={card.image}
                     alt={card.name}
                     width={60}
                     height={60}
-                    className="w-14 h-14 rounded-full mr-3 hover:scale-110 transition-transform duration-200"
+                    className="w-14 h-14 border border-gray-200 rounded-full mr-3 hover:scale-110 transition-transform duration-200"
                   />
                   <h2
                     className={`${nameSize} mr-4 font-semibold text-purple-800 font-[IRANSans]`}
@@ -279,15 +279,15 @@ const Sixth: React.FC<SixthProps> = ({
               <SwiperSlide
                 key={index}
                 className={`swiper-slide-custom ${cardClass} bg-white p-5 rounded-lg shadow-md 
-                flex flex-col justify-between transition-all duration-300 cursor-pointer relative pb-20`}>
+                flex flex-col border border-gray-100 justify-between transition-all duration-300 cursor-pointer relative pb-20`}>
              
-                <div className="flex flex-row-reverse items-center mb-4 h-32">
+                <div className="flex items-center mb-4 h-32 -mr-5">
                   <Image
                     src={card.image}
                     alt={card.name}
                     width={60}
                     height={60}
-                    className="w-14 h-14 rounded-full mr-3 hover:scale-110 transition-transform duration-200"/>
+                    className="w-16 h-16 border border-gray-200 rounded-full mr-3 hover:scale-110 transition-transform duration-200"/>
                   
                   <h2
                     className={`${nameSize} mr-4 font-semibold text-purple-800 font-[IRANSans]`}>

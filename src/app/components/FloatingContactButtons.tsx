@@ -108,7 +108,7 @@ function FloatingContactButtons() {
       )}
       <button
         onClick={toggleButtons}
-        className={`${getButtonSize()} rounded-full bg-green-500 flex items-center justify-center shadow-lg animate-shake hover:scale-110 transition-transform duration-300`}
+        className={`${getButtonSize()} rounded-full border-2 border-white bg-green-500 flex items-center justify-center shadow-lg animate-shake hover:scale-110 transition-transform duration-300`}
       >
         <Image
           src={showButtons ? "/images/close.png" : "/images/call.png"}
