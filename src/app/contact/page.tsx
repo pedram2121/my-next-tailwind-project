@@ -114,19 +114,6 @@ function Contact() {
                   avaminonline@gmail.com
                 </p>
               </div>
-
-              <div className="flex items-center gap-4 group">
-                <Image
-                  src="/images/location2.png"
-                  alt="آیکون موقعیت مکانی"
-                  width={32}
-                  height={32}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300 w-11 h-11"
-                />
-                <p className="text-xl font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
-                  نشانی: تهران، خیابان آزادی، پلاک ۱
-                </p>
-              </div>
             </div>
           </div>
 
@@ -225,8 +212,7 @@ function Contact() {
             </p>
           </div>
           <div className="flex flex-col items-center text-center space-y-4">
-            <p className="text-lg font-semibold text-gray-600 font-[IRANSans] text-[15px] leading-[37px] mt-3
-             text-justify-last-right ">
+            <p className="text-lg font-semibold text-gray-600 font-[IRANSans] text-[15px] leading-[37px] mt-3 text-justify-last-right">
               تیم پشتیبانی آوامین آماده پاسخگویی به شماست! در هر ساعت از
               شبانه‌روز می‌توانید از طریق شماره تماس 09121277336 (پشتیبانی در
               واتساپ و تلگرام) یا ایمیل avaminonline@gmail.com با ما در ارتباط
@@ -235,59 +221,6 @@ function Contact() {
             </p>
           </div>
         </div>
-      </div>
-
-      <div className="fixed bottom-10 right-10 flex flex-col items-end gap-6 z-50">
-        {showButtons && (
-          <div className="flex flex-col gap-3">
-            {socialButtons.map((button, index) => (
-              <div
-                key={button.name}
-                className={
-                  "flex flex-row-reverse items-center gap-2 transform transition-all duration-300 ease-in-out animate-shake " +
-                  (showButtons
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 -translate-y-10")
-                }
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <a
-                  href={button.link}
-                  className={
-                    "w-12 h-12 rounded-full " +
-                    button.color +
-                    " " +
-                    button.hoverColor +
-                    " flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300 animate-shake"
-                  }
-                >
-                  <Image
-                    src={button.icon}
-                    alt={button.alt}
-                    width={32}
-                    height={32}
-                    className="object-contain w-full h-full"
-                  />
-                </a>
-                <span className="text-gray-800 text-sm font-[IRANSans] font-semibold">
-                  {button.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        )}
-        <button
-          onClick={toggleButtons}
-          className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center shadow-lg animate-shake hover:scale-110 transition-transform duration-300"
-        >
-          <Image
-            src={showButtons ? "/images/close.png" : "/images/call.png"}
-            alt={showButtons ? "آیکون بستن" : "آیکون تماس"}
-            width={32}
-            height={32}
-            className="object-contain w-full h-full"
-          />
-        </button>
       </div>
     </div>
   );
@@ -332,18 +265,6 @@ function Contact() {
                 />
                 <p className="text-lg font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
                   designer@siratan.com
-                </p>
-              </div>
-              <div className="flex items-center gap-3 group">
-                <Image
-                  src="/images/location2.png"
-                  alt="آیکون موقعیت مکانی"
-                  width={28}
-                  height={28}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-                <p className="text-lg font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
-                  نشانی: تهران، خیابان آزادی، پلاک ۱
                 </p>
               </div>
             </div>
@@ -514,24 +435,22 @@ function Contact() {
           <h1 className="text-3xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
             تماس با ما
           </h1>
-          <span className="text-xl font-bold text-gray-500">contactus</span>
         </div>
         <div className="w-full bg-white rounded-xl shadow-lg p-6 flex flex-col gap-6">
           <div className="flex flex-col space-y-6">
-            <div className="flex items-center gap-2">
-              <h2 className="text-xl font-extrabold font-[IRANSans] text-right bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+            <div className="flex items-center mx-auto gap-2 pb-6">
+              <h2 className="text-xl font-extrabold font-[IRANSans] text-center bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
                 ارتباط با تیم اجرایی آوامین
               </h2>
-              <span className="text-lg font-bold text-gray-500"></span>
             </div>
             <div className="space-y-4">
               <div className="flex items-center gap-2 group">
                 <Image
                   src="/images/call2.png"
                   alt="آیکون شماره تماس"
-                  width={24}
-                  height={24}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
+                  width={25}
+                  height={25}
+                  className="object-contain group-hover:scale-125 transition-transform duration-300"
                 />
                 <p className="text-base font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
                   شماره تماس: 09121277336
@@ -541,24 +460,12 @@ function Contact() {
                 <Image
                   src="/images/email2.png"
                   alt="آیکون ایمیل"
-                  width={24}
-                  height={24}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
+                  width={25}
+                  height={25}
+                  className="object-contain group-hover:scale-125 transition-transform duration-300"
                 />
                 <p className="text-base font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
                   avaminonline@gmail.com
-                </p>
-              </div>
-              <div className="flex items-center gap-2 group">
-                <Image
-                  src="/images/location2.png"
-                  alt="آیکون موقعیت مکانی"
-                  width={24}
-                  height={24}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-                <p className="text-base font-bold text-gray-800 font-[IRANSans] text-right group-hover:text-purple-600 transition-colors duration-300">
-                  نشانی: تهران، خیابان آزادی، پلاک ۱
                 </p>
               </div>
             </div>
@@ -652,7 +559,7 @@ function Contact() {
               </a>
             </div>
             <p className="text-xs text-gray-600 mt-2 font-[IRANSans]">
-              با تیم آوامین در تماس باشید تا بهترین خدمات را تجربه کنید!
+              با تیم آوامین در تماس باشید تا بهترین خدمات را تجربه کنید
             </p>
           </div>
           <div className="flex flex-col items-center text-center space-y-2">
@@ -666,83 +573,11 @@ function Contact() {
           </div>
         </div>
       </div>
-
-      <div className="fixed bottom-6 right-6 flex flex-col items-end gap-3 z-100">
-        {showButtons && (
-          <div className="flex flex-col gap-2">
-            {socialButtons.map((button, index) => (
-              <div
-                key={button.name}
-                className={
-                  "flex flex-row-reverse items-center gap-2 transform transition-all duration-300 ease-in-out animate-shake " +
-                  (showButtons
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 -translate-y-10")
-                }
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <a
-                  href={button.link}
-                  className={
-                    "w-10 h-10 rounded-full " +
-                    button.color +
-                    " " +
-                    button.hoverColor +
-                    " flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300 animate-shake"
-                  }
-                >
-                  <Image
-                    src={button.icon}
-                    alt={button.alt}
-                    width={28}
-                    height={28}
-                    className="object-contain w-full h-full"
-                  />
-                </a>
-                <span className="text-gray-800 text-xs font-[IRANSans] font-semibold">
-                  {button.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        )}
-        <button
-          onClick={toggleButtons}
-          className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center shadow-lg animate-shake hover:scale-110 transition-transform duration-300"
-        >
-          <Image
-            src={showButtons ? "/images/close.png" : "/images/call.png"}
-            alt={showButtons ? "آیکون بستن" : "آیکون تماس"}
-            width={28}
-            height={28}
-            className="object-contain w-full h-full"
-          />
-        </button>
-      </div>
     </div>
   );
 
   return (
     <div>
-      <style>
-        {`
-          @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
-            20%, 40%, 60%, 80% { transform: translateX(2px); }
-          }
-          .animate-shake {
-            animation: shake 2s infinite;
-          }
-          .animate-fade-in {
-            animation: fadeIn 0.5s ease-in-out;
-          }
-        `}
-      </style>
       {isDesktop && renderDesktop()}
       {isTablet && renderTablet()}
       {isMobile && renderMobile()}

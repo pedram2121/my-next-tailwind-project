@@ -43,27 +43,17 @@ function Footer() {
   ];
 
   const renderDesktop = () => (
-    <div className="relative h-auto w-full font-[IRANSans] bg-white z-50 pt-16 pb-8 mt-24">
+    <div
+      className="relative h-auto w-full font-[IRANSans] bg-[#f9f9f9] z-50 pt-24 pb-8 mt-16"  >
       <Container>
         <div className="grid grid-cols-4 gap-8 justify-center items-start text-center">
           <div className="flex flex-col items-center space-y-5">
             <h1 className="text-xl font-extrabold text-gray-800">
-              اشتراک در خبرنامه
+              دانلود اپلیکیشن
             </h1>
             <p className="text-gray-500 text-sm w-48">
-              با عضویت در خبرنامه آوامین، از آخرین قیمت‌ها و پیشنهادهای ویژه طلا
-              باخبر شوید.
+              اکنون آوامین را دانلود کنید و به‌راحتی معامله کنید
             </p>
-            <div className="flex flex-row-reverse items-center gap-2">
-              <input
-                type="email"
-                placeholder="ایمیل خود را وارد کنید"
-                className="w-48 py-2 px-4 border border-gray-300 rounded-lg text-right text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
-              />
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all">
-                اشتراک
-              </button>
-            </div>
           </div>
 
           <div className="flex flex-col items-center space-y-4">
@@ -147,7 +137,7 @@ function Footer() {
             />
             <p className="text-gray-500 text-sm w-60">
               آوامین، پلتفرم امن و مطمئن برای خرید و فروش طلا با پشتیبانی 24/7 و
-              بهترین قیمت‌های بازار.
+              بهترین قیمت‌های بازار
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -272,21 +262,11 @@ function Footer() {
 
           <div className="flex flex-col items-center space-y-4">
             <h1 className="text-lg font-extrabold text-gray-800">
-              اشتراک در خبرنامه
+              دانلود اپلیکیشن
             </h1>
             <p className="text-gray-500 text-sm w-48">
-              از آخرین قیمت‌ها و پیشنهادهای ویژه طلا باخبر شوید.
+              اکنون آوامین را دانلود کنید و به‌راحتی معامله کنید!
             </p>
-            <div className="flex flex-row-reverse items-center gap-2">
-              <input
-                type="email"
-                placeholder="ایمیل خود را وارد کنید"
-                className="w-36 py-2 px-4 border border-gray-300 rounded-lg text-right text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
-              />
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all">
-                اشتراک
-              </button>
-            </div>
           </div>
         </div>
         <div className="mt-8 pt-4 border-t border-gray-200 text-center">
@@ -299,7 +279,7 @@ function Footer() {
   );
 
   const renderMobile = () => (
-    <div className="relative h-auto w-full font-[IRANSans] bg-white z-50 py-6">
+    <div className="relative h-auto w-full font-[IRANSans] bg-[#f9f9f9] z-50 py-6">
       <Container>
         <div className="flex flex-col space-y-8 justify-center items-center text-center">
           <div className="flex flex-col items-end text-right w-full space-y-3">
@@ -310,7 +290,7 @@ function Footer() {
               height={20}
             />
             <p className="text-gray-500 text-sm w-full">
-              آوامین، پلتفرم امن برای خرید و فروش طلا با پشتیبانی 24/7.
+              آوامین، پلتفرم امن برای خرید و فروش طلا با پشتیبانی 24/7
             </p>
             <div className="flex gap-3 justify-end">
               {socialLinks.map((social) => (
@@ -400,26 +380,15 @@ function Footer() {
                 designer@siratan.com
               </a>
             </p>
-            <p className="text-gray-500 text-sm">
-              آدرس: تهران، خیابان آزادی، پلاک ۱
-            </p>
           </div>
 
           <div className="flex flex-col w-full items-end space-y-4 text-right">
-            <h1 className="text-base font-extrabold text-gray-800">خبرنامه</h1>
+            <h1 className="text-base font-extrabold text-gray-800">
+              دانلود اپلیکیشن
+            </h1>
             <p className="text-gray-500 text-sm w-full">
-              از پیشنهادهای ویژه و قیمت‌های به‌روز باخبر شوید.
+              اکنون آوامین را دانلود کنید و به‌راحتی معامله کنید
             </p>
-            <div className="flex flex-row-reverse w-full items-center gap-2">
-              <input
-                type="email"
-                placeholder="ایمیل خود را وارد کنید"
-                className="w-full h-10 px-4 border border-gray-300 rounded-lg text-right text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
-              />
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 h-10 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all">
-                اشتراک
-              </button>
-            </div>
           </div>
         </div>
         <div className="mt-8 pt-4 border-t border-gray-200 text-center">

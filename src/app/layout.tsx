@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ResponsiveContext from "./components/ResponsiveContext";
+import FloatingContactButtons from "./components/FloatingContactButtons";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,15 +22,15 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,}: Readonly<{children: React.ReactNode;}>) {
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="fa">
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
-        <ResponsiveContext>
-          {children}
-        </ResponsiveContext>
+        <ResponsiveContext>{children}</ResponsiveContext>
         <Footer />
+        <FloatingContactButtons />
       </body>
     </html>
   );
