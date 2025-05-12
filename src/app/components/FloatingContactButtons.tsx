@@ -70,7 +70,7 @@ function FloatingContactButtons() {
 
   return (
     <div
-      className={`fixed bottom-10 ${getLeftPosition()} flex flex-col items-start gap-3 z-100`}
+      className={`fixed bottom-7 ${getLeftPosition()} flex flex-col items-start gap-3 z-100`}
     >
       <style jsx>{`
         @keyframes colorPulse {

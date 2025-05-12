@@ -377,7 +377,7 @@ function Footer() {
                 href="mailto:designer@siratan.com"
                 className="hover:text-purple-600"
               >
-                designer@siratan.com
+                avaminonline@gmail.com
               </a>
             </p>
           </div>
