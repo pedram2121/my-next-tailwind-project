@@ -116,32 +116,41 @@ const TabletView: React.FC = () => {
 // Mobile View Component
 const MobileView: React.FC = () => {
   const containerStyles =
-    "flex flex-col items-center justify-center min-h-[600px] bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-10 relative overflow-hidden";
-  const imgContainerStyles = "flex justify-center w-full mb-6";
+    "flex flex-col items-center justify-between min-h-[600px] bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-10 relative overflow-hidden";
+  const imgContainerStyles = "flex justify-center w-full absolute bottom-0";
   const textContainerStyles =
-    "flex flex-col items-center space-y-6 w-full text-center font-[IRANSans]";
-  const deviceStyles = "w-3/4";
+    "flex flex-col items-center space-y-8 w-full text-centerfont-[IRANSans] mt-12";
+  const deviceStyles = "w-4/5 drop-shadow-lg";
   const textSize = "text-2xl";
-  const paragraphSize = "text-sm";
+  const paragraphSize = "text-base text-center";
 
   return (
+
     <div className={containerStyles}>
       <style>{pulseAnimation}</style>
       <div className="relative">
-        <div
-          className="absolute -top-80 -left-60 w-40 h-40 bg-purple-300 rounded-full
-         opacity-20 animate-[pulse_3s_ease-in-out_infinite]"
-        />
+        <div className="absolute -top-80 -left-60 w-40 h-40 bg-purple-300 rounded-full opacity-20 animate-[pulse_3s_ease-in-out_infinite]" />
       </div>
       <div className="absolute -bottom-1 left-2 w-[100px] h-[100px] opacity-50">
         <Image
           src="/images/45.png"
           alt="Decorative shape"
           fill
-          className="object-contain"
-        />
+          className="object-contain"/>
       </div>
-      <div className={`${imgContainerStyles} relative w-full`}>
+
+      <div className={textContainerStyles}>
+
+        <h1 className={`font-bold font-[IRANSans] leading-tight ${textSize} text-white drop-shadow-md hover:text-opacity-90 transition-opacity duration-300`}>
+          آوامین را همین حالا دانلود کنید
+        </h1>
+
+        <p className={`leading-relaxed max-w-md ${paragraphSize} text-white drop-shadow-md hover:text-opacity-90 transition-opacity duration-300 font-[IRANSans]`}>
+          با آوامین، قیمت طلا را لحظه‌ای رصد کنید و معاملات خود را با امنیت بالا
+          انجام دهید. اپلیکیشن ما همیشه همراه شماست
+        </p>
+      </div>
+      <div className={`${imgContainerStyles} relative w-full top-14`}>
         <Image
           src={available.src}
           alt="App personally crafted for you"
@@ -149,15 +158,6 @@ const MobileView: React.FC = () => {
           width={300}
           height={300}
         />
-      </div>
-      <div className={textContainerStyles}>
-        <h1 className={`font-bold font-[IRANSans] leading-tight ${textSize}`}>
-          حالا آوامین را دانلود کنید
-        </h1>
-        <p className={`leading-relaxed max-w-md ${paragraphSize}`}>
-          با آوامین، قیمت طلا را لحظه‌ای دنبال کنید و معاملات خود را با امنیت
-          بالا انجام دهید. اپلیکیشن ما برای راحتی شما در هر زمان در دسترسه!
-        </p>
       </div>
     </div>
   );

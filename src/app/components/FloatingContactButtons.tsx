@@ -41,16 +41,20 @@ function FloatingContactButtons() {
     },
   ];
 
-  
   const getLeftPosition = () => {
     if (isMobile) return "left-2";
     if (isTablet) return "left-4";
-    return "left-10"; 
+    return "left-10";
   };
 
   const getButtonSize = () => {
-    if (isMobile) return "w-10 h-10";
+    if (isMobile) return "w-12 h-12";
     return "w-10 h-10";
+  };
+
+  const getMainButtonSize = () => {
+    if (isMobile) return "w-20 h-20";
+    return "w-14 h-14";
   };
 
   useEffect(() => {
@@ -65,22 +69,38 @@ function FloatingContactButtons() {
   }, [isMobile, isTablet, isDesktop]);
 
   return (
-
-    <div className={`fixed bottom-10 ${getLeftPosition()} flex flex-col items-start gap-3 z-100`}>
-
+    <div
+      className={`fixed bottom-10 ${getLeftPosition()} flex flex-col items-start gap-3 z-100`}
+    >
+      <style jsx>{`
+        @keyframes colorPulse {
+          0% {
+            background-color: rgba(255, 255, 255, 0.2);
+          }
+          33% {
+            background-color: rgba(0, 204, 0, 0.2);
+          }
+          66% {
+            background-color: rgba(0, 183, 235, 0.2);
+          }
+          100% {
+            background-color: rgba(255, 255, 255, 0.2);
+          }
+        }
+      `}</style>
       {showButtons && (
         <div className="flex flex-col gap-3">
           {socialButtons.map((button, index) => (
-            <div key={button.name}
-                 className={
-                 "flex flex-row-reverse items-center gap-2 transform transition-all duration-300 ease-in-out animate-shake " +
-                 (showButtons
+            <div
+              key={button.name}
+              className={
+                "flex flex-row-reverse items-center gap-2 transform transition-all duration-300 ease-in-out animate-shake " +
+                (showButtons
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 -translate-y-10")
               }
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-            
               <a
                 href={button.link}
                 className={
@@ -106,18 +126,24 @@ function FloatingContactButtons() {
           ))}
         </div>
       )}
-      <button
-        onClick={toggleButtons}
-        className={`${getButtonSize()} rounded-full border-2 border-white bg-green-500 flex items-center justify-center shadow-lg animate-shake hover:scale-110 transition-transform duration-300`}
-      >
-        <Image
-          src={showButtons ? "/images/close.png" : "/images/call.png"}
-          alt={showButtons ? "آیکون بستن" : "آیکون تماس"}
-          width={isMobile ? 28 : 32}
-          height={isMobile ? 28 : 32}
-          className="object-contain w-full h-full"
-        />
-      </button>
+      <div className="relative">
+        <div
+          className="absolute inset-[-10px] rounded-full animate-pulse scale-125"
+          style={{ animation: "colorPulse 6s infinite, pulse 2s infinite" }}
+        ></div>
+        <button
+          onClick={toggleButtons}
+          className={`${getMainButtonSize()} relative rounded-full border-2 border-white bg-[#00cc00] flex items-center justify-center shadow-xl opacity-80 hover:opacity-100 animate-[spin_3s_linear_infinite] hover:animate-none hover:scale-125 transition-all duration-300`}
+        >
+          <Image
+            src={showButtons ? "/images/close.png" : "/images/call.png"}
+            alt={showButtons ? "آیکون بستن" : "آیکون تماس"}
+            width={isMobile ? 48 : 36}
+            height={isMobile ? 48 : 36}
+            className="object-contain w-full h-full"
+          />
+        </button>
+      </div>
     </div>
   );
 }
